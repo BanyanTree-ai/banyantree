@@ -13,8 +13,6 @@
         html, body {
             height: 100%;
             overflow-x: hidden;
-            /* CSS Smooth Scroll requires scroll-behavior on the scrolling element (html or body) */
-            /* scroll-behavior: smooth; /* Alternative to class on <html> */
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -115,27 +113,28 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(55, 65, 81, 0.5); /* Subtle border */
-            /* Add scroll-padding-top to account for fixed nav height */
-            scroll-padding-top: 70px; /* Adjust this value based on actual nav height */
         }
         nav a, #mobile-menu-button {
             color: #e5e7eb;
             transition: color 0.2s ease; /* Added transition */
         }
         nav a:hover, #mobile-menu-button:hover {
-            color: #34d399;
+            color: #34d399; /* Hover color for links */
+        }
+        /* Specific hover for SVG icon link */
+        nav a.brand-link:hover svg {
+             color: #34d399; /* Change SVG color on hover */
         }
         /* Improved Mobile Menu */
         #mobile-menu {
-            /* display: none; Replaced by Tailwind 'hidden' */
             background-color: rgba(31, 41, 55, 0.98);
             backdrop-filter: blur(10px);
-            transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* Added transition */
-            transform: translateY(-10px); /* Start slightly offset */
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+            transform: translateY(-10px);
             opacity: 0;
-            pointer-events: none; /* Disable interaction when hidden */
+            pointer-events: none;
         }
-        #mobile-menu.menu-open { /* Class to show menu */
+        #mobile-menu.menu-open {
             transform: translateY(0);
             opacity: 1;
             pointer-events: auto;
@@ -144,14 +143,12 @@
         a:focus-visible, button:focus-visible, input:focus-visible {
             outline: none;
             box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.6); /* Custom focus ring */
-            border-radius: 4px; /* Optional: match element rounding */
+            border-radius: 4px;
         }
-        /* Specific focus for inputs */
         input[type="email"]:focus-visible {
-             box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.6), 0 0 0 1px #10B981; /* Combine ring and border */
+             box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.6), 0 0 0 1px #10B981;
              border-color: #10B981;
         }
-
 
         /* Animation Placeholder (Hero Section) */
         .animation-placeholder {
@@ -171,7 +168,7 @@
             cursor: pointer;
         }
         .concept-content {
-            transition: opacity 0.5s ease-in-out; /* Smoother transition */
+            transition: opacity 0.5s ease-in-out;
             width: 100%;
         }
         .concept-content.fade-out { opacity: 0; }
@@ -182,9 +179,8 @@
             margin-bottom: 0.75rem;
         }
         .animation-placeholder h3 {
-            /* Responsive Typography Example */
-            font-size: 1.5rem; /* Base size */
-            lg:font-size: 1.75rem; /* Larger on large screens */
+            font-size: 1.5rem;
+            lg:font-size: 1.75rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
             color: #e5e7eb;
@@ -236,7 +232,44 @@
 
     <nav class="fixed w-full z-30 top-0">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="nav-link text-2xl font-bold hover:opacity-80 focus-visible:opacity-80"> <i class="fas fa-leaf mr-2 banyan-leaf-color"></i>BanyanTree AI
+            <a href="#" class="nav-link brand-link text-2xl font-bold hover:opacity-80 focus-visible:opacity-80 inline-flex items-center">
+                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" fill="currentColor" class="w-10 h-10 mr-2 text-green-400 transition-colors duration-200"> <path d="M 2 142 C 25 152, 175 152, 198 142 L 198 149 L 2 149 Z" />
+                    <path d="M 85 142 C 88 110, 92 80, 100 70 C 108 80, 112 110, 115 142 Q 107 148, 100 148 Q 93 148, 85 142 Z" />
+                    <path d="M 15 82
+                             C 10 60, 25 38, 45 35
+                             Q 65 30, 100 33
+                             Q 135 30, 155 35
+                             C 175 38, 190 60, 185 82
+                             L 180 84 L 178 81 L 173 85 L 168 80
+                             L 163 86 L 158 82 L 153 87 L 148 83
+                             L 143 88 L 138 84 L 133 89 L 128 85
+                             L 123 90 L 118 86 L 113 91 L 108 87
+                             L 103 92 L 100 87 L 97 92 L 92 87
+                             L 87 91 L 82 86 L 77 90 L 72 85
+                             L 67 89 L 62 84 L 57 88 L 52 83
+                             L 47 87 L 42 82 L 37 86 L 32 80
+                             L 27 85 L 22 81 L 20 84
+                             Z"/>
+                    <g stroke="currentColor" stroke-linecap="round">
+                        <line x1="40" y1="82" x2="42" y2="110" stroke-width="1"/>
+                        <line x1="50" y1="84" x2="51" y2="120" stroke-width="1.2"/>
+                        <line x1="60" y1="86" x2="61" y2="130" stroke-width="1.3"/>
+                        <line x1="70" y1="87" x2="70" y2="115" stroke-width="1.1"/>
+                        <line x1="80" y1="88" x2="80" y2="135" stroke-width="1.4"/>
+                        <line x1="90" y1="87" x2="90" y2="125" stroke-width="1.3"/>
+                        <line x1="100" y1="70" x2="100" y2="142" stroke-width="1.8"/> <line x1="110" y1="87" x2="110" y2="125" stroke-width="1.3"/>
+                        <line x1="120" y1="88" x2="120" y2="135" stroke-width="1.4"/>
+                        <line x1="130" y1="87" x2="130" y2="115" stroke-width="1.1"/>
+                        <line x1="140" y1="86" x2="139" y2="130" stroke-width="1.3"/>
+                        <line x1="150" y1="84" x2="149" y2="120" stroke-width="1.2"/>
+                        <line x1="160" y1="82" x2="158" y2="110" stroke-width="1"/>
+                        <line x1="65" y1="86" x2="66" y2="100" stroke-width="0.8"/>
+                        <line x1="75" y1="87" x2="75" y2="98" stroke-width="0.8"/>
+                        <line x1="125" y1="87" x2="125" y2="98" stroke-width="0.8"/>
+                        <line x1="135" y1="86" x2="134" y2="100" stroke-width="0.8"/>
+                    </g>
+                </svg>
+                BanyanTree AI
             </a>
             <div id="desktop-menu" class="hidden md:flex space-x-4 items-center">
                 <a href="#vision" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Our Vision</a>
@@ -562,7 +595,13 @@
 
             <section id="why-us" class="py-16 fade-in-section">
                 <div class="container mx-auto px-6 text-center">
-                    <i class="fas fa-tree fa-3x banyan-leaf-color mb-6"></i>
+                    <div class="inline-block mb-6 text-green-400">
+                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" fill="currentColor" class="w-14 h-14"> <path d="M 2 142 C 25 152, 175 152, 198 142 L 198 149 L 2 149 Z" />
+                            <path d="M 85 142 C 88 110, 92 80, 100 70 C 108 80, 112 110, 115 142 Q 107 148, 100 148 Q 93 148, 85 142 Z" />
+                            <path d="M 15 82 C 10 60, 25 38, 45 35 Q 65 30, 100 33 Q 135 30, 155 35 C 175 38, 190 60, 185 82 L 180 84 L 178 81 L 173 85 L 168 80 L 163 86 L 158 82 L 153 87 L 148 83 L 143 88 L 138 84 L 133 89 L 128 85 L 123 90 L 118 86 L 113 91 L 108 87 L 103 92 L 100 87 L 97 92 L 92 87 L 87 91 L 82 86 L 77 90 L 72 85 L 67 89 L 62 84 L 57 88 L 52 83 L 47 87 L 42 82 L 37 86 L 32 80 L 27 85 L 22 81 L 20 84 Z"/>
+                            <g stroke="currentColor" stroke-linecap="round"> <line x1="40" y1="82" x2="42" y2="110" stroke-width="1"/> <line x1="50" y1="84" x2="51" y2="120" stroke-width="1.2"/> <line x1="60" y1="86" x2="61" y2="130" stroke-width="1.3"/> <line x1="70" y1="87" x2="70" y2="115" stroke-width="1.1"/> <line x1="80" y1="88" x2="80" y2="135" stroke-width="1.4"/> <line x1="90" y1="87" x2="90" y2="125" stroke-width="1.3"/> <line x1="100" y1="70" x2="100" y2="142" stroke-width="1.8"/> <line x1="110" y1="87" x2="110" y2="125" stroke-width="1.3"/> <line x1="120" y1="88" x2="120" y2="135" stroke-width="1.4"/> <line x1="130" y1="87" x2="130" y2="115" stroke-width="1.1"/> <line x1="140" y1="86" x2="139" y2="130" stroke-width="1.3"/> <line x1="150" y1="84" x2="149" y2="120" stroke-width="1.2"/> <line x1="160" y1="82" x2="158" y2="110" stroke-width="1"/> <line x1="65" y1="86" x2="66" y2="100" stroke-width="0.8"/> <line x1="75" y1="87" x2="75" y2="98" stroke-width="0.8"/> <line x1="125" y1="87" x2="125" y2="98" stroke-width="0.8"/> <line x1="135" y1="86" x2="134" y2="100" stroke-width="0.8"/> </g>
+                        </svg>
+                    </div>
                     <h2 class="text-3xl lg:text-4xl font-bold section-title mb-6">Why BanyanTree AI?</h2>
                     <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
                         Traditional AI development is complex. BanyanTree AI simplifies this, empowering you to build the future of AI, today:
@@ -605,8 +644,13 @@
     <footer class="bg-gray-900 text-gray-400 py-12 relative z-10 border-t border-gray-700 mt-auto">
         <div class="container mx-auto px-6 text-center">
             <div class="mb-4">
-                <a href="#" class="text-xl font-bold text-green-500 hover:text-green-400">
-                    <i class="fas fa-leaf mr-2"></i>BanyanTree AI
+                <a href="#" class="nav-link brand-link text-xl font-bold text-green-500 hover:text-green-400 inline-flex items-center">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" fill="currentColor" class="w-8 h-8 mr-2 transition-colors duration-200"> <path d="M 2 142 C 25 152, 175 152, 198 142 L 198 149 L 2 149 Z" />
+                        <path d="M 85 142 C 88 110, 92 80, 100 70 C 108 80, 112 110, 115 142 Q 107 148, 100 148 Q 93 148, 85 142 Z" />
+                        <path d="M 15 82 C 10 60, 25 38, 45 35 Q 65 30, 100 33 Q 135 30, 155 35 C 175 38, 190 60, 185 82 L 180 84 L 178 81 L 173 85 L 168 80 L 163 86 L 158 82 L 153 87 L 148 83 L 143 88 L 138 84 L 133 89 L 128 85 L 123 90 L 118 86 L 113 91 L 108 87 L 103 92 L 100 87 L 97 92 L 92 87 L 87 91 L 82 86 L 77 90 L 72 85 L 67 89 L 62 84 L 57 88 L 52 83 L 47 87 L 42 82 L 37 86 L 32 80 L 27 85 L 22 81 L 20 84 Z"/>
+                        <g stroke="currentColor" stroke-linecap="round"> <line x1="40" y1="82" x2="42" y2="110" stroke-width="1"/> <line x1="50" y1="84" x2="51" y2="120" stroke-width="1.2"/> <line x1="60" y1="86" x2="61" y2="130" stroke-width="1.3"/> <line x1="70" y1="87" x2="70" y2="115" stroke-width="1.1"/> <line x1="80" y1="88" x2="80" y2="135" stroke-width="1.4"/> <line x1="90" y1="87" x2="90" y2="125" stroke-width="1.3"/> <line x1="100" y1="70" x2="100" y2="142" stroke-width="1.8"/> <line x1="110" y1="87" x2="110" y2="125" stroke-width="1.3"/> <line x1="120" y1="88" x2="120" y2="135" stroke-width="1.4"/> <line x1="130" y1="87" x2="130" y2="115" stroke-width="1.1"/> <line x1="140" y1="86" x2="139" y2="130" stroke-width="1.3"/> <line x1="150" y1="84" x2="149" y2="120" stroke-width="1.2"/> <line x1="160" y1="82" x2="158" y2="110" stroke-width="1"/> <line x1="65" y1="86" x2="66" y2="100" stroke-width="0.8"/> <line x1="75" y1="87" x2="75" y2="98" stroke-width="0.8"/> <line x1="125" y1="87" x2="125" y2="98" stroke-width="0.8"/> <line x1="135" y1="86" x2="134" y2="100" stroke-width="0.8"/> </g>
+                    </svg>
+                    BanyanTree AI
                 </a>
             </div>
             <div class="text-sm space-x-6 mb-4">
@@ -638,7 +682,6 @@
             const conceptPlaceholder = document.getElementById('orchestration-animation-placeholder');
             const dynamicContentDiv = document.getElementById('dynamic-concept-content');
             const sections = document.querySelectorAll('.fade-in-section');
-            // No need for mainNav or allNavLinks for this simplified approach
 
             // --- Mobile Menu Toggle ---
             if (menuButton && mobileMenu) {
@@ -662,11 +705,9 @@
                 });
 
                 // Close menu when a mobile nav link is clicked
-                // This relies on the browser handling the navigation after the click
                 mobileNavLinks.forEach(link => {
                     link.addEventListener('click', () => {
                          if (mobileMenu.classList.contains('menu-open')) {
-                            // We just need to close the menu; the browser handles navigation
                             menuButton.click();
                          }
                     });
@@ -677,9 +718,6 @@
             if (currentYearElement) {
                  currentYearElement.textContent = new Date().getFullYear();
             }
-
-            // --- Smooth Scroll for Navigation Links ---
-            // REMOVED - Relying on CSS scroll-smooth and default browser anchor behavior
 
             // --- Dynamic Orchestration Concept Display ---
             let currentConceptIndex = 0;
