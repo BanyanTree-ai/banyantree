@@ -602,16 +602,16 @@
             },
             "icon": "fas fa-robot"
           },
-          {
-            "id": "complexSystemSimulation",
-            "title": "Complex System Simulation",
-            "tagline": "Model the Unpredictable. Visually.",
-            "description": "Simulate and observe the emergent behaviors of multiple interacting agents or entities, inspired by complex systems like the n-body problem in physics. Understand system dynamics through no-code configuration.",
+          { // Added Three Body Problem Orchestrator to the hero animation
+            "id": "threeBodyProblem",
+            "title": "Three Body Problem Orchestrator",
+            "tagline": "Chaos-Aware Modelling.",
+            "description": "Design and simulate complex agent interactions inspired by n-body physics, allowing for the exploration of emergent behaviors and sensitivities in dynamic, multi-agent systems. Understand chaos and find stability, all no-code.",
             "flow": {
               "type": "multiAgentSimulation",
-              "trigger": "User-defined simulation parameters and initial conditions.",
-              "keyConcepts": ["Agent-Based Modeling", "Emergent Behavior", "Parameter Tuning", "Visualization"],
-              "noCodeEmphasis": "Visually configure agent properties, interaction rules, and simulation parameters. Observe emergent dynamics without coding physics engines."
+              "trigger": "User-defined initial conditions for multiple interacting agent 'bodies'.",
+              "keyConcepts": ["N-Body Dynamics", "Emergent Behavior", "Sensitivity Analysis", "Chaotic Systems", "Visual Simulation"],
+              "noCodeEmphasis": "Visually define agent 'bodies', their interaction laws (e.g., gravitational, economic), and initial states. Observe and analyze complex emergent behaviors without writing physics or simulation code."
             },
             "icon": "fas fa-shapes" 
           },
@@ -671,21 +671,13 @@
                     menuButton.classList.remove('active');
                 }
             });
-            document.querySelectorAll('#mobile-menu a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (mobileMenu.style.display === 'block') {
-                        mobileMenu.style.display = 'none';
-                        menuButton.classList.remove('active');
-                    }
-                });
-            });
+            // Removed redundant mobile menu link click handler here
         }
         
         // --- Set Current Year in Footer ---
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
         // --- Smooth Scroll for Navigation Links ---
-        // Refined smooth scroll logic
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault(); 
@@ -708,7 +700,7 @@
                     });
                 }
                 
-                // Close mobile menu if open
+                // Close mobile menu if open (this now handles all nav link clicks)
                 if (mobileMenu && mobileMenu.style.display === 'block') {
                     mobileMenu.style.display = 'none';
                     if(menuButton) menuButton.classList.remove('active');
