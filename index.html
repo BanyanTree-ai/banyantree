@@ -1,162 +1,203 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" class="scroll-smooth"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BanyanTree AI: The No-Code Agentic AI Operating System for designing, deploying, and managing intelligent, interconnected agentic systems. Explore the future of AI orchestration.">
     <title>BanyanTree AI - Agentic AI Operating System</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌳</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        /* Base Styles */
         html, body {
-            height: 100%; 
-            overflow-x: hidden; 
+            height: 100%;
+            overflow-x: hidden;
+            /* CSS Smooth Scroll requires scroll-behavior on the scrolling element (html or body) */
+            /* scroll-behavior: smooth; /* Alternative to class on <html> */
         }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #111827; 
-            color: #d1d5db; 
+            background-color: #111827; /* Dark background */
+            color: #d1d5db; /* Default text color */
             position: relative;
             display: flex;
             flex-direction: column;
         }
+        /* Background Image Pseudo-element */
         body::before {
             content: "";
-            position: fixed; 
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3Cdefs%3E%3Cfilter id='blurFilter' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeGaussianBlur in='SourceGraphic' stdDeviation='3'/%3E%3C/filter%3E%3C/defs%3E%3Cpath d='M480 950 V 600 Q 480 580 500 580 Q 520 580 520 600 V 950 Z' fill='%231a202c'/%3E%3Cellipse cx='500' cy='450' rx='350' ry='200' fill='%231a202c'/%3E%3Cellipse cx='500' cy='350' rx='300' ry='150' fill='%231a202c'/%3E%3Cellipse cx='500' cy='280' rx='250' ry='120' fill='%231a202c'/%3E%3Cpath d='M300 450 Q 320 600 330 750 L 340 750 Q 330 600 310 450 Z' fill='%231a202c'/%3E%3Cpath d='M700 450 Q 680 600 670 750 L 660 750 Q 670 600 690 450 Z' fill='%231a202c'/%3E%3Cpath d='M400 400 Q 410 550 420 700 L 430 700 Q 420 550 410 400 Z' fill='%231a202c'/%3E%3Cpath d='M600 400 Q 590 550 580 700 L 570 700 Q 580 550 590 400 Z' fill='%231a202c'/%3E%3C/svg%3E");
+            /* Optimized SVG Background */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3Cdefs%3E%3Cfilter id='blurFilter' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeGaussianBlur in='SourceGraphic' stdDeviation='3'/%3E%3C/filter%3E%3C/defs%3E%3Cg fill='%231a202c'%3E%3Cpath d='M480 950 V 600 Q 480 580 500 580 Q 520 580 520 600 V 950 Z'/%3E%3Cellipse cx='500' cy='450' rx='350' ry='200'/%3E%3Cellipse cx='500' cy='350' rx='300' ry='150'/%3E%3Cellipse cx='500' cy='280' rx='250' ry='120'/%3E%3Cpath d='M300 450 Q 320 600 330 750 L 340 750 Q 330 600 310 450 Z'/%3E%3Cpath d='M700 450 Q 680 600 670 750 L 660 750 Q 670 600 690 450 Z'/%3E%3Cpath d='M400 400 Q 410 550 420 700 L 430 700 Q 420 550 410 400 Z'/%3E%3Cpath d='M600 400 Q 590 550 580 700 L 570 700 Q 580 550 590 400 Z'/%3E%3C/g%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            background-position: center bottom; 
-            background-size: cover; 
-            opacity: 0.15; 
-            z-index: -1; 
-            filter: blur(2px); 
+            background-position: center bottom;
+            background-size: cover;
+            opacity: 0.1; /* Reduced opacity */
+            z-index: -1;
+            filter: blur(3px); /* Slightly increased blur */
         }
 
+        /* Hero Section Background */
         .hero-bg {
-            background: linear-gradient(135deg, #10B981 0%, #4F46E5 70%, #3730A3 100%); 
-            color: #f0fdf4; 
+            background: linear-gradient(135deg, #10B981 0%, #4F46E5 70%, #3730A3 100%);
+            color: #f0fdf4; /* Light text for contrast */
         }
-        .banyan-leaf-color {
-            color: #34d399; 
-        }
-        .section-title {
-            font-weight: 800;
-            color: #a5f3fc; 
-        }
-        .card-base { 
-            border-radius: 0.75rem; 
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            height: 100%; 
-        }
-        .glassmorphism-card { 
-            background-color: rgba(31, 41, 55, 0.4); 
-            backdrop-filter: blur(16px) saturate(180%);
-            -webkit-backdrop-filter: blur(16px) saturate(180%);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        }
-        .card-base:hover {
-            transform: translateY(-6px) scale(1.02);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
-        }
-        .card-content {
-            flex-grow: 1; 
-        }
-        .cta-button {
-            background-color: #10B981; 
-            color: white;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 6px rgba(16, 185, 129, 0.3);
-        }
-        .cta-button:hover {
-            background-color: #059669; 
-            transform: translateY(-3px);
-            box-shadow: 0 7px 14px rgba(16, 185, 129, 0.4);
-        }
-        nav {
-            background-color: rgba(17, 24, 39, 0.85); 
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-        nav a, #mobile-menu-button {
-            color: #e5e7eb; 
-        }
-        nav a:hover, #mobile-menu-button:hover {
-            color: #34d399; 
-        }
-        #mobile-menu {
-            display: none;
-            background-color: rgba(31, 41, 55, 0.98); 
-            backdrop-filter: blur(10px);
-        }
-        .hero-svg-overlay { 
+        .hero-svg-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
-            z-index: 0; 
-            opacity: 0.15; 
+            z-index: 0;
+            opacity: 0.1; /* Adjusted opacity */
+        }
+
+        /* Color & Font Styles */
+        .banyan-leaf-color { color: #34d399; }
+        .section-title { font-weight: 800; color: #a5f3fc; }
+
+        /* Card Styles */
+        .card-base {
+            border-radius: 0.75rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .glassmorphism-card {
+            background-color: rgba(31, 41, 55, 0.5); /* Slightly more opaque */
+            backdrop-filter: blur(12px) saturate(150%); /* Adjusted blur/saturation */
+            -webkit-backdrop-filter: blur(12px) saturate(150%);
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Softer border */
+            box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.3); /* Adjusted shadow */
+        }
+        .card-base:hover {
+            transform: translateY(-5px) scale(1.015); /* Subtle hover effect */
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.35);
+        }
+        .card-content { flex-grow: 1; }
+        .card-tagline {
+            font-size: 0.8rem;
+            font-style: italic;
+            color: #6ee7b7;
+            margin-top: -0.25rem;
+            margin-bottom: 0.75rem;
         }
         .blog-card img {
-            height: 200px; 
-            object-fit: cover; 
+            height: 200px;
+            object-fit: cover;
             border-top-left-radius: 0.75rem;
             border-top-right-radius: 0.75rem;
         }
+
+        /* Button Styles */
+        .cta-button {
+            background-color: #10B981;
+            color: white;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(16, 185, 129, 0.3);
+        }
+        .cta-button:hover {
+            background-color: #059669;
+            transform: translateY(-2px); /* Subtle lift */
+            box-shadow: 0 6px 12px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: rgba(17, 24, 39, 0.8); /* Slightly less transparent */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(55, 65, 81, 0.5); /* Subtle border */
+            /* Add scroll-padding-top to account for fixed nav height */
+            scroll-padding-top: 70px; /* Adjust this value based on actual nav height */
+        }
+        nav a, #mobile-menu-button {
+            color: #e5e7eb;
+            transition: color 0.2s ease; /* Added transition */
+        }
+        nav a:hover, #mobile-menu-button:hover {
+            color: #34d399;
+        }
+        /* Improved Mobile Menu */
+        #mobile-menu {
+            /* display: none; Replaced by Tailwind 'hidden' */
+            background-color: rgba(31, 41, 55, 0.98);
+            backdrop-filter: blur(10px);
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* Added transition */
+            transform: translateY(-10px); /* Start slightly offset */
+            opacity: 0;
+            pointer-events: none; /* Disable interaction when hidden */
+        }
+        #mobile-menu.menu-open { /* Class to show menu */
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+        /* Focus Styles (Accessibility) */
+        a:focus-visible, button:focus-visible, input:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.6); /* Custom focus ring */
+            border-radius: 4px; /* Optional: match element rounding */
+        }
+        /* Specific focus for inputs */
+        input[type="email"]:focus-visible {
+             box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.6), 0 0 0 1px #10B981; /* Combine ring and border */
+             border-color: #10B981;
+        }
+
+
+        /* Animation Placeholder (Hero Section) */
         .animation-placeholder {
-            background-color: rgba(17, 24, 39, 0.5); 
-            border: 1px solid rgba(52, 211, 153, 0.3); 
+            background-color: rgba(17, 24, 39, 0.5);
+            border: 1px solid rgba(52, 211, 153, 0.3);
             border-radius: 0.75rem;
             padding: 2rem;
-            min-height: 350px; 
+            min-height: 350px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             box-shadow: 0 10px 30px rgba(16,185,129,0.15), inset 0 0 15px rgba(16,185,129,0.1);
-            position: relative; 
-            overflow: hidden; 
-            cursor: pointer; 
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
         }
         .concept-content {
-            transition: opacity 0.7s ease-in-out;
+            transition: opacity 0.5s ease-in-out; /* Smoother transition */
             width: 100%;
         }
-        .concept-content.fade-out {
-            opacity: 0;
-        }
-        .concept-content.fade-in {
-            opacity: 1;
-        }
+        .concept-content.fade-out { opacity: 0; }
+        .concept-content.fade-in { opacity: 1; }
         .animation-placeholder .icon {
-            font-size: 2.5rem; 
+            font-size: 2.5rem;
             color: #34d399;
             margin-bottom: 0.75rem;
         }
-         .animation-placeholder h3 {
-            font-size: 1.75rem; 
+        .animation-placeholder h3 {
+            /* Responsive Typography Example */
+            font-size: 1.5rem; /* Base size */
+            lg:font-size: 1.75rem; /* Larger on large screens */
             font-weight: 700;
             margin-bottom: 0.5rem;
-            color: #e5e7eb; 
+            color: #e5e7eb;
         }
         .animation-placeholder .tagline {
             font-size: 1rem;
             font-weight: 500;
-            color: #6ee7b7; 
+            color: #6ee7b7;
             margin-bottom: 1rem;
         }
         .animation-placeholder .description-preview {
             font-size: 0.875rem;
-            color: #9ca3af; 
+            color: #9ca3af;
             max-width: 90%;
             margin: 0 auto 1rem auto;
             line-height: 1.6;
@@ -171,65 +212,69 @@
             margin-top: 0.5rem;
         }
 
-        .dev-hub-card-icon {
-            color: #34d399; 
+        .dev-hub-card-icon { color: #34d399; }
+        .main-content-wrapper { flex-grow: 1; }
+
+        /* Fade-in Animation for Sections */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        .card-tagline { 
-            font-size: 0.8rem;
-            font-style: italic;
-            color: #6ee7b7; 
-            margin-top: -0.25rem;
-            margin-bottom: 0.75rem;
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
-        .main-content-wrapper { 
-            flex-grow: 1;
+
+        /* Add scroll padding to the html element to offset the fixed nav */
+        html {
+             scroll-padding-top: 70px; /* Adjust based on nav height */
         }
     </style>
 </head>
 <body class="leading-normal tracking-normal">
 
-    <nav class="fixed w-full z-30 top-0"> 
+    <nav class="fixed w-full z-30 top-0">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold hover:opacity-80">
-                <i class="fas fa-leaf mr-2 banyan-leaf-color"></i>BanyanTree AI
+            <a href="#" class="nav-link text-2xl font-bold hover:opacity-80 focus-visible:opacity-80"> <i class="fas fa-leaf mr-2 banyan-leaf-color"></i>BanyanTree AI
             </a>
             <div id="desktop-menu" class="hidden md:flex space-x-4 items-center">
-                <a href="#vision" class="px-3 py-2 rounded-md text-sm font-medium">Our Vision</a>
-                <a href="#features" class="px-3 py-2 rounded-md text-sm font-medium">Features</a>
-                <a href="#orchestration" class="px-3 py-2 rounded-md text-sm font-medium">Orchestration</a>
-                <a href="#future" class="px-3 py-2 rounded-md text-sm font-medium">Agentic Frontier</a>
-                <a href="#developers" class="px-3 py-2 rounded-md text-sm font-medium">Developers</a>
-                <a href="#blog" class="px-3 py-2 rounded-md text-sm font-medium">Blog</a>
-                <a href="#why-us" class="px-3 py-2 rounded-md text-sm font-medium">Why Us?</a>
-                <a href="#contact" class="cta-button text-white px-4 py-2 rounded-md text-sm font-medium">Get Early Access</a>
+                <a href="#vision" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Our Vision</a>
+                <a href="#features" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Features</a>
+                <a href="#orchestration" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Orchestration</a>
+                <a href="#future" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Agentic Frontier</a>
+                <a href="#developers" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Developers</a>
+                <a href="#blog" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Blog</a>
+                <a href="#why-us" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Why Us?</a>
+                <a href="#contact" class="nav-link cta-button text-white px-4 py-2 rounded-md text-sm font-medium">Get Early Access</a>
             </div>
             <div class="md:hidden">
-                <button id="mobile-menu-button" class="focus:outline-none">
+                <button id="mobile-menu-button" class="focus:outline-none p-2 rounded-md" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
-        <div id="mobile-menu" class="md:hidden absolute w-full shadow-lg py-2">
-            <a href="#vision" class="block hover:bg-gray-700 px-4 py-2 text-sm">Our Vision</a>
-            <a href="#features" class="block hover:bg-gray-700 px-4 py-2 text-sm">Features</a>
-            <a href="#orchestration" class="block hover:bg-gray-700 px-4 py-2 text-sm">Orchestration</a>
-            <a href="#future" class="block hover:bg-gray-700 px-4 py-2 text-sm">Agentic Frontier</a>
-            <a href="#developers" class="block hover:bg-gray-700 px-4 py-2 text-sm">Developers</a>
-            <a href="#blog" class="block hover:bg-gray-700 px-4 py-2 text-sm">Blog</a>
-            <a href="#why-us" class="block hover:bg-gray-700 px-4 py-2 text-sm">Why Us?</a>
-            <a href="#contact" class="block cta-button text-white px-4 py-3 text-sm font-medium text-center mx-2 my-2 rounded-md">Get Early Access</a>
+        <div id="mobile-menu" class="hidden md:hidden absolute w-full shadow-lg py-2">
+            <a href="#vision" class="nav-link block hover:bg-gray-700 px-4 py-2 text-sm rounded-md mx-2">Our Vision</a>
+            <a href="#features" class="nav-link block hover:bg-gray-700 px-4 py-2 text-sm rounded-md mx-2">Features</a>
+            <a href="#orchestration" class="nav-link block hover:bg-gray-700 px-4 py-2 text-sm rounded-md mx-2">Orchestration</a>
+            <a href="#future" class="nav-link block hover:bg-gray-700 px-4 py-2 text-sm rounded-md mx-2">Agentic Frontier</a>
+            <a href="#developers" class="nav-link block hover:bg-gray-700 px-4 py-2 text-sm rounded-md mx-2">Developers</a>
+            <a href="#blog" class="nav-link block hover:bg-gray-700 px-4 py-2 text-sm rounded-md mx-2">Blog</a>
+            <a href="#why-us" class="nav-link block hover:bg-gray-700 px-4 py-2 text-sm rounded-md mx-2">Why Us?</a>
+            <a href="#contact" class="nav-link block cta-button text-white px-4 py-3 text-sm font-medium text-center mx-2 my-2 rounded-md">Get Early Access</a>
         </div>
     </nav>
 
-    <header class="hero-bg pt-32 pb-24 relative z-20"> 
-        <div class="hero-svg-overlay"> 
-            <svg width="100%" height="100%" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-                 <path d="M-200 300 Q-100 200 0 300 T200 300 T400 300 T600 300 T800 300 T1000 300 T1200 300 T1400 300 T1600 300 T1800 300" stroke="rgba(255,255,255,0.1)" stroke-width="120" fill="none" stroke-linecap="round"/>
-                <path d="M-200 400 Q-50 300 100 400 T350 400 T600 400 T850 400 T1100 400 T1350 400 T1600 400 T1850 400" stroke="rgba(255,255,255,0.07)" stroke-width="100" fill="none" stroke-linecap="round"/>
+    <header class="hero-bg pt-32 pb-24 relative z-20 fade-in-section">
+        <div class="hero-svg-overlay">
+             <svg width="100%" height="100%" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M-200 300 Q-100 200 0 300 T200 300 T400 300 T600 300 T800 300 T1000 300 T1200 300 T1400 300 T1600 300 T1800 300" stroke="rgba(255,255,255,0.08)" stroke-width="120" fill="none" stroke-linecap="round"/>
+                <path d="M-200 400 Q-50 300 100 400 T350 400 T600 400 T850 400 T1100 400 T1350 400 T1600 400 T1850 400" stroke="rgba(255,255,255,0.05)" stroke-width="100" fill="none" stroke-linecap="round"/>
             </svg>
         </div>
-        <div class="container mx-auto px-6 text-center relative z-10"> 
-            <h2 class="text-4xl lg:text-6xl font-extrabold mb-4 leading-tight">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
                 Agentic AI <span class="block">Operating System</span>
             </h2>
             <p class="text-lg lg:text-xl mb-8 max-w-3xl mx-auto">
@@ -247,19 +292,19 @@
         </div>
     </header>
 
-    <div class="relative z-10 main-content-wrapper"> 
+    <div class="relative z-10 main-content-wrapper">
         <main class="container mx-auto px-6 py-16 space-y-24">
 
-            <section id="vision" class="text-center">
+            <section id="vision" class="text-center fade-in-section">
                 <i class="fas fa-seedling fa-3x banyan-leaf-color mb-6"></i>
                 <h2 class="text-3xl lg:text-4xl font-bold section-title mb-6">Our Vision: The AI-Native Future</h2>
                 <p class="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                    At BanyanTree AI, we see a future where intelligent agents seamlessly collaborate to solve humanity's grand challenges. Our no-code platform is the seed, enabling anyone to cultivate vast, interconnected agent ecosystems—as resilient and adaptive as a banyan tree—to drive unprecedented innovation. 
+                    At BanyanTree AI, we see a future where intelligent agents seamlessly collaborate to solve humanity's grand challenges. Our no-code platform is the seed, enabling anyone to cultivate vast, interconnected agent ecosystems—as resilient and adaptive as a banyan tree—to drive unprecedented innovation.
                     Think of BanyanTree AI as the <strong class="text-green-400">operating system for your agentic initiatives</strong>—providing the core services, tools, and orchestration capabilities to build everything from specialized single agents to sophisticated multi-agent collectives.
                 </p>
             </section>
 
-            <section id="features">
+            <section id="features" class="fade-in-section">
                 <h2 class="text-3xl lg:text-4xl font-bold section-title mb-6 text-center">Core Platform Pillars</h2>
                 <p class="text-center text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
                     BanyanTree AI provides a comprehensive <strong class="text-green-400">AI Operating System</strong> that supports the full lifecycle of agentic AI development. Our modular architecture allows you to start small, with individual tools and agents, and scale to complex orchestrations involving multiple agents and advanced coordination patterns. Build with confidence, knowing you have a robust foundation.
@@ -286,21 +331,21 @@
                             <p class="text-gray-400 text-sm leading-relaxed">Agents can dynamically find and interact with other registered agents, fostering a collaborative and extensible ecosystem.</p>
                         </div>
                     </div>
-                     <div class="card-base glassmorphism-card p-6 text-center">
+                    <div class="card-base glassmorphism-card p-6 text-center">
                         <div class="card-content">
                             <div class="text-5xl banyan-leaf-color mb-5"><i class="fas fa-link"></i></div>
                             <h3 class="text-xl font-semibold mb-3 text-gray-100">Standardized A2A Protocol</h3>
                             <p class="text-gray-400 text-sm leading-relaxed">Ensures reliable, structured Agent-to-Agent communication, forming the backbone of complex orchestrations.</p>
                         </div>
                     </div>
-                     <div class="card-base glassmorphism-card p-6 text-center">
+                    <div class="card-base glassmorphism-card p-6 text-center">
                         <div class="card-content">
                             <div class="text-5xl banyan-leaf-color mb-5"><i class="fas fa-puzzle-piece"></i></div>
                             <h3 class="text-xl font-semibold mb-3 text-gray-100">Modular & Extensible AI</h3>
                             <p class="text-gray-400 text-sm leading-relaxed">Easily integrate existing services (APIs, LLMs) or define new agent capabilities to extend the platform's power.</p>
                         </div>
                     </div>
-                     <div class="card-base glassmorphism-card p-6 text-center">
+                    <div class="card-base glassmorphism-card p-6 text-center">
                         <div class="card-content">
                             <div class="text-5xl banyan-leaf-color mb-5"><i class="fas fa-tachometer-alt"></i></div>
                             <h3 class="text-xl font-semibold mb-3 text-gray-100">Monitoring & Analytics</h3>
@@ -310,7 +355,7 @@
                 </div>
             </section>
 
-            <section id="orchestration" class="bg-gray-800 bg-opacity-50 py-16 rounded-lg backdrop-blur-md border border-gray-700">
+            <section id="orchestration" class="bg-gray-800 bg-opacity-50 py-16 rounded-lg backdrop-blur-md border border-gray-700 fade-in-section">
                 <div class="container mx-auto px-6">
                     <h2 class="text-3xl lg:text-4xl font-bold section-title mb-12 text-center">AI Orchestration Engines</h2>
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -340,7 +385,7 @@
                         </div>
                         <div class="card-base glassmorphism-card p-6">
                             <div class="card-content">
-                                <div class="text-4xl banyan-leaf-color mb-4"><i class="fas fa-shapes"></i></div> 
+                                <div class="text-4xl banyan-leaf-color mb-4"><i class="fas fa-shapes"></i></div>
                                 <h3 class="text-xl font-semibold mb-2 text-gray-100">Three Body Problem Orchestrator</h3>
                                 <p class="card-tagline">"Chaos-Aware Modelling"</p>
                                 <p class="text-gray-400 text-sm leading-relaxed">Design and simulate agent interactions inspired by n-body physics, allowing for the exploration of emergent behaviors in complex, dynamic systems.</p>
@@ -365,8 +410,8 @@
                     </div>
                 </div>
             </section>
-            
-            <section id="future" class="py-16">
+
+            <section id="future" class="py-16 fade-in-section">
                 <div class="container mx-auto px-6 text-center">
                     <i class="fas fa-rocket fa-3x banyan-leaf-color mb-6"></i>
                     <h2 class="text-3xl lg:text-4xl font-bold section-title mb-6">Ride the Next Wave of Agentic Frontier</h2>
@@ -398,14 +443,14 @@
                                 <p class="text-gray-400 text-sm leading-relaxed">Integrate tools for defining, monitoring, and enforcing ethical guidelines and operational boundaries within your AI agent systems.</p>
                             </div>
                         </div>
-                        <div class="card-base glassmorphism-card p-6 text-center">
+                         <div class="card-base glassmorphism-card p-6 text-center">
                             <div class="card-content">
                                 <div class="text-5xl text-green-400 mb-5"><i class="fas fa-hands-helping"></i></div>
                                 <h3 class="text-xl font-semibold mb-3 text-gray-100">Advanced Human-AI Loop</h3>
                                 <p class="text-gray-400 text-sm leading-relaxed">Develop sophisticated interfaces for seamless human-agent collaboration, expert oversight, and intuitive intervention in complex AI orchestrations.</p>
                             </div>
                         </div>
-                        <div class="card-base glassmorphism-card p-6 text-center">
+                         <div class="card-base glassmorphism-card p-6 text-center">
                             <div class="card-content">
                                 <div class="text-5xl text-green-400 mb-5"><i class="fas fa-chart-line"></i></div>
                                 <h3 class="text-xl font-semibold mb-3 text-gray-100">Predictive AI Orchestration</h3>
@@ -414,7 +459,7 @@
                         </div>
                          <div class="card-base glassmorphism-card p-6 text-center">
                             <div class="card-content">
-                                <div class="text-5xl text-green-400 mb-5"><i class="fas fa-brain"></i></div> 
+                                <div class="text-5xl text-green-400 mb-5"><i class="fas fa-brain"></i></div>
                                 <h3 class="text-xl font-semibold mb-3 text-gray-100">Cognitive Architectures</h3>
                                 <p class="text-gray-400 text-sm leading-relaxed">Provide tools to design AI agents and orchestrations that emulate more complex cognitive architectures, enabling richer reasoning and learning.</p>
                             </div>
@@ -423,7 +468,7 @@
                 </div>
             </section>
 
-            <section id="developers" class="py-16">
+            <section id="developers" class="py-16 fade-in-section">
                 <div class="container mx-auto px-6 text-center">
                     <i class="fas fa-laptop-code fa-3x banyan-leaf-color mb-6"></i>
                     <h2 class="text-3xl lg:text-4xl font-bold section-title mb-6">Developer Hub: Build & Extend with AI</h2>
@@ -467,14 +512,14 @@
                 </div>
             </section>
 
-            <section id="blog" class="bg-gray-800 bg-opacity-50 py-16 rounded-lg backdrop-blur-md border border-gray-700">
+            <section id="blog" class="bg-gray-800 bg-opacity-50 py-16 rounded-lg backdrop-blur-md border border-gray-700 fade-in-section">
                 <div class="container mx-auto px-6">
                     <h2 class="text-3xl lg:text-4xl font-bold section-title mb-12 text-center">
                         <i class="fas fa-feather-alt mr-2 banyan-leaf-color"></i>From Our Roots: AI Insights & Ideas
                     </h2>
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="card-base glassmorphism-card overflow-hidden">
-                            <img src="https://placehold.co/600x400/1f2937/34d399?text=No-Code+AI" alt="Abstract representation of interconnected agent nodes" class="w-full">
+                        <div class="card-base glassmorphism-card overflow-hidden blog-card">
+                            <img src="https://placehold.co/600x400/1f2937/34d399?text=No-Code+AI" alt="Abstract representation of interconnected agent nodes" class="w-full" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1f2937/cccccc?text=Image+Error';">
                             <div class="p-6 card-content">
                                 <h3 class="text-xl font-semibold mb-3 text-gray-100">The Power of No-Code AI Agent Orchestration</h3>
                                 <p class="text-gray-400 text-sm leading-relaxed mb-4">Discover how visual tools are democratizing the creation of complex AI agent systems, enabling faster innovation for businesses of all sizes.</p>
@@ -484,8 +529,8 @@
                                 <p class="text-xs text-gray-500">By BanyanTree AI Team - May 10, 2025</p>
                             </div>
                         </div>
-                        <div class="card-base glassmorphism-card overflow-hidden">
-                            <img src="https://placehold.co/600x400/1f2937/34d399?text=Event-Driven+Agents" alt="Flowchart showing events triggering AI agent actions" class="w-full">
+                        <div class="card-base glassmorphism-card overflow-hidden blog-card">
+                            <img src="https://placehold.co/600x400/1f2937/34d399?text=Event-Driven+Agents" alt="Flowchart showing events triggering AI agent actions" class="w-full" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1f2937/cccccc?text=Image+Error';">
                             <div class="p-6 card-content">
                                 <h3 class="text-xl font-semibold mb-3 text-gray-100">Event-Driven AI: Building Responsive Agents</h3>
                                 <p class="text-gray-400 text-sm leading-relaxed mb-4">Dive into how event-driven patterns allow AI agents to react intelligently and adapt to real-time changes, leading to more dynamic systems.</p>
@@ -495,8 +540,8 @@
                                 <p class="text-xs text-gray-500">By Dr. Agent Smith - May 05, 2025</p>
                             </div>
                         </div>
-                        <div class="card-base glassmorphism-card overflow-hidden">
-                            <img src="https://placehold.co/600x400/1f2937/34d399?text=Agentic+Future" alt="Futuristic image representing interconnected AI brains" class="w-full">
+                        <div class="card-base glassmorphism-card overflow-hidden blog-card">
+                            <img src="https://placehold.co/600x400/1f2937/34d399?text=Agentic+Future" alt="Futuristic image representing interconnected AI brains" class="w-full" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1f2937/cccccc?text=Image+Error';">
                             <div class="p-6 card-content">
                                 <h3 class="text-xl font-semibold mb-3 text-gray-100">The Agentic Future: Beyond Current AI</h3>
                                 <p class="text-gray-400 text-sm leading-relaxed mb-4">Exploring concepts like self-improving systems, decentralized networks, and ethical governance in the evolving world of AI agents.</p>
@@ -515,8 +560,7 @@
                 </div>
             </section>
 
-
-            <section id="why-us" class="py-16"> 
+            <section id="why-us" class="py-16 fade-in-section">
                 <div class="container mx-auto px-6 text-center">
                     <i class="fas fa-tree fa-3x banyan-leaf-color mb-6"></i>
                     <h2 class="text-3xl lg:text-4xl font-bold section-title mb-6">Why BanyanTree AI?</h2>
@@ -540,14 +584,14 @@
                 </div>
             </section>
 
-            <section id="contact" class="text-center py-20 bg-gray-800 bg-opacity-50 rounded-lg backdrop-blur-md border border-gray-700"> 
+            <section id="contact" class="text-center py-20 bg-gray-800 bg-opacity-50 rounded-lg backdrop-blur-md border border-gray-700 fade-in-section">
                 <h2 class="text-3xl lg:text-4xl font-bold section-title mb-6">Grow Your AI Ecosystem with BanyanTree AI</h2>
                 <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
                     Be among the first to experience the future of AI agent building. Join our waitlist for early access and exclusive updates.
                 </p>
                 <form class="max-w-lg mx-auto">
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <input type="email" placeholder="Enter your email" class="flex-grow px-4 py-3 rounded-md border border-gray-600 bg-gray-700 text-gray-200 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none shadow-sm placeholder-gray-500" required>
+                        <input type="email" placeholder="Enter your email" class="flex-grow px-4 py-3 rounded-md border border-gray-600 bg-gray-700 text-gray-200 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none shadow-sm placeholder-gray-500" required aria-label="Email address for waitlist">
                         <button type="submit" class="cta-button font-bold py-3 px-8 rounded-lg text-lg shadow-md">
                             Join the AI Revolution
                         </button>
@@ -558,7 +602,7 @@
         </main>
     </div>
 
-    <footer class="bg-gray-900 text-gray-400 py-12 relative z-10 border-t border-gray-700"> 
+    <footer class="bg-gray-900 text-gray-400 py-12 relative z-10 border-t border-gray-700 mt-auto">
         <div class="container mx-auto px-6 text-center">
             <div class="mb-4">
                 <a href="#" class="text-xl font-bold text-green-500 hover:text-green-400">
@@ -574,198 +618,148 @@
     </footer>
 
     <script>
-        // --- Orchestration Concepts Data ---
+        // --- Orchestration Concepts Data (Unchanged) ---
         const orchestrationConcepts = [
-          {
-            "id": "quantumEntanglement",
-            "title": "Quantum-Inspired Entanglement",
-            "tagline": "Interlinked Agents, Cascading Intelligence.",
-            "description": "Model intricate, conditional dependencies where an agent's state 'collapse' triggers a cascade of observations and actions in 'entangled' agents, enabling highly adaptive and responsive systems.",
-            "flow": {
-              "type": "quantumEntanglement",
-              "trigger": "State change in an observed agent or critical external event.",
-              "keyConcepts": ["Observation", "State Collapse", "Visual Entanglement Mapping", "Cascading Effects"],
-              "noCodeEmphasis": "Visually define entanglement maps, agent states, and trigger conditions on the no-code canvas. No complex physics, just powerful conditional logic."
-            },
-            "icon": "fas fa-atom"
-          },
-          {
-            "id": "reactWithTeams",
-            "title": "ReAct Orchestration with AI Agent Teams",
-            "tagline": "Reason, Act, Achieve. Collaboratively.",
-            "description": "Empower a central LLM planner to reason about a goal, select appropriate AI agents from specialized teams, delegate tasks (actions), and iterate based on observations until the goal is achieved.",
-            "flow": {
-              "type": "reactLoop",
-              "trigger": "User-defined complex goal or query.",
-              "keyConcepts": ["Goal Decomposition", "LLM Planning", "Tool Selection", "Team Collaboration", "Iterative Refinement"],
-              "noCodeEmphasis": "Drag-and-drop to assemble agent teams. Configure the PlannerAgent's access to agents and tools visually. Define goals in natural language."
-            },
-            "icon": "fas fa-robot"
-          },
-          { // Added Three Body Problem Orchestrator to the hero animation
-            "id": "threeBodyProblem",
-            "title": "Three Body Problem Orchestrator",
-            "tagline": "Chaos-Aware Modelling.",
-            "description": "Design and simulate complex agent interactions inspired by n-body physics, allowing for the exploration of emergent behaviors and sensitivities in dynamic, multi-agent systems. Understand chaos and find stability, all no-code.",
-            "flow": {
-              "type": "multiAgentSimulation",
-              "trigger": "User-defined initial conditions for multiple interacting agent 'bodies'.",
-              "keyConcepts": ["N-Body Dynamics", "Emergent Behavior", "Sensitivity Analysis", "Chaotic Systems", "Visual Simulation"],
-              "noCodeEmphasis": "Visually define agent 'bodies', their interaction laws (e.g., gravitational, economic), and initial states. Observe and analyze complex emergent behaviors without writing physics or simulation code."
-            },
-            "icon": "fas fa-shapes" 
-          },
-          {
-            "id": "maxwellsDemon",
-            "title": "Maxwell's Demon Orchestration",
-            "tagline": "Intelligent Information Valves for Agents.",
-            "description": "Create sophisticated information flow control between agents, where a 'gatekeeper' agent (the Demon) selectively allows or blocks information/tasks based on complex criteria, optimizing system efficiency or achieving specific states.",
-            "flow": {
-              "type": "informationGating",
-              "trigger": "Continuous stream of data/tasks or specific events.",
-              "keyConcepts": ["Information Filtering", "Conditional Routing", "State-Based Control", "System Optimization"],
-              "noCodeEmphasis": "Visually define the DemonAgent's filtering and routing logic. Connect Source and Target agents via the Demon on the canvas."
-            },
-            "icon": "fas fa-door-closed" 
-          },
-          {
-            "id": "declarativeWorkflows",
-            "title": "Declarative AI Workflows",
-            "tagline": "Build Stateful Processes. Visually.",
-            "description": "Design and execute complex, stateful processes where agents perform tasks in a sequence or based on conditional logic, inspired by LangGraph. Define the 'what', let BanyanTree AI handle the 'how'.",
-            "flow": {
-                "type": "graphWorkflow",
-                "trigger": "API call, Kafka message, or another agent's action.",
-                "keyConcepts": ["State Management", "Conditional Edges", "Agent Nodes", "Visual Graph Definition"],
-                "noCodeEmphasis": "Drag-and-drop agent nodes, define connections and conditional logic visually. Monitor workflow state in real-time."
-            },
-            "icon": "fas fa-stream"
-          },
-          {
-            "id": "eventDrivenArchitecture",
-            "title": "Event-Driven Agent Architecture",
-            "tagline": "React Intelligently. In Real-Time.",
-            "description": "Construct systems where agents are triggered by real-time events (e.g., from Kafka, IoT devices, user actions). Events are filtered, mapped, and dispatched by the platform's Event Router.",
-            "flow": {
-                "type": "eventDriven",
-                "trigger": "External events (Kafka messages, API calls, sensor data).",
-                "keyConcepts": ["Event Consumption", "Event Filtering", "Payload Mapping", "Asynchronous Processing"],
-                "noCodeEmphasis": "Visually configure event sources, filtering rules, and data mappings to agent inputs. Define agent responses to specific events."
-            },
-            "icon": "fas fa-bolt"
-          }
+            { id: "quantumEntanglement", title: "Quantum-Inspired Entanglement", tagline: "Interlinked Agents, Cascading Intelligence.", description: "Model intricate, conditional dependencies where an agent's state 'collapse' triggers a cascade of observations and actions in 'entangled' agents, enabling highly adaptive and responsive systems.", flow: { type: "quantumEntanglement", trigger: "State change in an observed agent or critical external event.", keyConcepts: ["Observation", "State Collapse", "Visual Entanglement Mapping", "Cascading Effects"], noCodeEmphasis: "Visually define entanglement maps, agent states, and trigger conditions on the no-code canvas. No complex physics, just powerful conditional logic." }, icon: "fas fa-atom" },
+            { id: "reactWithTeams", title: "ReAct Orchestration with AI Agent Teams", tagline: "Reason, Act, Achieve. Collaboratively.", description: "Empower a central LLM planner to reason about a goal, select appropriate AI agents from specialized teams, delegate tasks (actions), and iterate based on observations until the goal is achieved.", flow: { type: "reactLoop", trigger: "User-defined complex goal or query.", keyConcepts: ["Goal Decomposition", "LLM Planning", "Tool Selection", "Team Collaboration", "Iterative Refinement"], noCodeEmphasis: "Drag-and-drop to assemble agent teams. Configure the PlannerAgent's access to agents and tools visually. Define goals in natural language." }, icon: "fas fa-robot" },
+            { id: "threeBodyProblem", title: "Three Body Problem Orchestrator", tagline: "Chaos-Aware Modelling.", description: "Design and simulate complex agent interactions inspired by n-body physics, allowing for the exploration of emergent behaviors and sensitivities in dynamic, multi-agent systems. Understand chaos and find stability, all no-code.", flow: { type: "multiAgentSimulation", trigger: "User-defined initial conditions for multiple interacting agent 'bodies'.", keyConcepts: ["N-Body Dynamics", "Emergent Behavior", "Sensitivity Analysis", "Chaotic Systems", "Visual Simulation"], noCodeEmphasis: "Visually define agent 'bodies', their interaction laws (e.g., gravitational, economic), and initial states. Observe and analyze complex emergent behaviors without writing physics or simulation code." }, icon: "fas fa-shapes" },
+            { id: "maxwellsDemon", title: "Maxwell's Demon Orchestration", tagline: "Intelligent Information Valves for Agents.", description: "Create sophisticated information flow control between agents, where a 'gatekeeper' agent (the Demon) selectively allows or blocks information/tasks based on complex criteria, optimizing system efficiency or achieving specific states.", flow: { type: "informationGating", trigger: "Continuous stream of data/tasks or specific events.", keyConcepts: ["Information Filtering", "Conditional Routing", "State-Based Control", "System Optimization"], noCodeEmphasis: "Visually define the DemonAgent's filtering and routing logic. Connect Source and Target agents via the Demon on the canvas." }, icon: "fas fa-door-closed" },
+            { id: "declarativeWorkflows", title: "Declarative AI Workflows", tagline: "Build Stateful Processes. Visually.", description: "Design and execute complex, stateful processes where agents perform tasks in a sequence or based on conditional logic, inspired by LangGraph. Define the 'what', let BanyanTree AI handle the 'how'.", flow: { type: "graphWorkflow", trigger: "API call, Kafka message, or another agent's action.", keyConcepts: ["State Management", "Conditional Edges", "Agent Nodes", "Visual Graph Definition"], noCodeEmphasis: "Drag-and-drop agent nodes, define connections and conditional logic visually. Monitor workflow state in real-time." }, icon: "fas fa-stream" },
+            { id: "eventDrivenArchitecture", title: "Event-Driven Agent Architecture", tagline: "React Intelligently. In Real-Time.", description: "Construct systems where agents are triggered by real-time events (e.g., from Kafka, IoT devices, user actions). Events are filtered, mapped, and dispatched by the platform's Event Router.", flow: { type: "eventDriven", trigger: "External events (Kafka messages, API calls, sensor data).", keyConcepts: ["Event Consumption", "Event Filtering", "Payload Mapping", "Asynchronous Processing"], noCodeEmphasis: "Visually configure event sources, filtering rules, and data mappings to agent inputs. Define agent responses to specific events." }, icon: "fas fa-bolt" }
         ];
 
-        // --- Mobile Menu Toggle Script ---
-        const menuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (menuButton && mobileMenu) {
-            menuButton.addEventListener('click', () => {
-                const isHidden = mobileMenu.style.display === 'none' || mobileMenu.style.display === '';
-                mobileMenu.style.display = isHidden ? 'block' : 'none';
-                menuButton.classList.toggle('active', isHidden);
-            });
-            document.addEventListener('click', (event) => {
-                if (!mobileMenu.contains(event.target) && !menuButton.contains(event.target) && mobileMenu.style.display === 'block') {
-                    mobileMenu.style.display = 'none';
-                    menuButton.classList.remove('active');
-                }
-            });
-            // Removed redundant mobile menu link click handler here
-        }
-        
-        // --- Set Current Year in Footer ---
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', () => {
 
-        // --- Smooth Scroll for Navigation Links ---
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault(); 
-                const targetId = this.getAttribute('href');
-                const targetElement = (targetId === '#') ? document.body : document.querySelector(targetId);
+            // --- Get DOM Elements ---
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileNavLinks = mobileMenu ? mobileMenu.querySelectorAll('.nav-link') : [];
+            const currentYearElement = document.getElementById('currentYear');
+            const conceptPlaceholder = document.getElementById('orchestration-animation-placeholder');
+            const dynamicContentDiv = document.getElementById('dynamic-concept-content');
+            const sections = document.querySelectorAll('.fade-in-section');
+            // No need for mainNav or allNavLinks for this simplified approach
 
-                if (targetElement) {
-                    let offsetPosition;
-                    if (targetId === '#') {
-                        offsetPosition = 0;
-                    } else {
-                        const navbarHeight = document.querySelector('nav').offsetHeight;
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+            // --- Mobile Menu Toggle ---
+            if (menuButton && mobileMenu) {
+                menuButton.addEventListener('click', () => {
+                    const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+                    menuButton.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('menu-open');
+                    menuButton.classList.toggle('active', !isExpanded);
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', (event) => {
+                    const isClickInsideMenu = mobileMenu.contains(event.target);
+                    const isClickOnButton = menuButton.contains(event.target);
+                    const isMenuOpen = mobileMenu.classList.contains('menu-open');
+
+                    if (isMenuOpen && !isClickInsideMenu && !isClickOnButton) {
+                       menuButton.click(); // Simulate click to close
                     }
-                    
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: "smooth"
+                });
+
+                // Close menu when a mobile nav link is clicked
+                // This relies on the browser handling the navigation after the click
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                         if (mobileMenu.classList.contains('menu-open')) {
+                            // We just need to close the menu; the browser handles navigation
+                            menuButton.click();
+                         }
                     });
-                }
-                
-                // Close mobile menu if open (this now handles all nav link clicks)
-                if (mobileMenu && mobileMenu.style.display === 'block') {
-                    mobileMenu.style.display = 'none';
-                    if(menuButton) menuButton.classList.remove('active');
-                }
-            });
-        });
-
-        // --- Dynamic Orchestration Concept Display in Hero ---
-        const conceptPlaceholder = document.getElementById('orchestration-animation-placeholder');
-        const dynamicContentDiv = document.getElementById('dynamic-concept-content');
-        let currentConceptIndex = 0;
-        let conceptInterval; 
-
-        function displayConcept(index) {
-            if (!orchestrationConcepts.length || !dynamicContentDiv) return;
-            const concept = orchestrationConcepts[index];
-            
-            dynamicContentDiv.classList.remove('fade-in'); 
-            dynamicContentDiv.classList.add('fade-out');
-
-            setTimeout(() => {
-                let keyConceptsHTML = '';
-                if (concept.flow && concept.flow.keyConcepts && concept.flow.keyConcepts.length > 0) {
-                    keyConceptsHTML = `<ul class="text-xs text-gray-400 list-disc list-inside mb-2 text-left max-w-md mx-auto">`;
-                    concept.flow.keyConcepts.slice(0, 3).forEach(kc => { 
-                        keyConceptsHTML += `<li>${kc}</li>`;
-                    });
-                    keyConceptsHTML += `</ul>`;
-                }
-                
-                dynamicContentDiv.innerHTML = `
-                    <div class="icon"><i class="${concept.icon}"></i></div>
-                    <h3>${concept.title}</h3>
-                    <p class="tagline">${concept.tagline}</p>
-                    <p class="description-preview">${concept.description.substring(0, 150)}...</p>
-                    ${keyConceptsHTML}
-                    <p class="no-code-emphasis">${concept.flow.noCodeEmphasis}</p>
-                `;
-                dynamicContentDiv.classList.remove('fade-out');
-                dynamicContentDiv.classList.add('fade-in');
-            }, 700); 
-        }
-
-        function cycleConcepts() {
-            currentConceptIndex = (currentConceptIndex + 1) % orchestrationConcepts.length;
-            displayConcept(currentConceptIndex);
-        }
-
-        function startConceptCycle() {
-            if (conceptInterval) clearInterval(conceptInterval); 
-            conceptInterval = setInterval(cycleConcepts, 7000);
-        }
-
-        if (dynamicContentDiv && orchestrationConcepts.length > 0) {
-            displayConcept(currentConceptIndex); 
-            startConceptCycle(); 
-
-            if (conceptPlaceholder) {
-                conceptPlaceholder.addEventListener('click', () => {
-                    cycleConcepts(); 
-                    startConceptCycle(); 
                 });
             }
-        }
 
+            // --- Set Current Year ---
+            if (currentYearElement) {
+                 currentYearElement.textContent = new Date().getFullYear();
+            }
+
+            // --- Smooth Scroll for Navigation Links ---
+            // REMOVED - Relying on CSS scroll-smooth and default browser anchor behavior
+
+            // --- Dynamic Orchestration Concept Display ---
+            let currentConceptIndex = 0;
+            let conceptInterval;
+
+            function displayConcept(index) {
+                if (!orchestrationConcepts || !dynamicContentDiv || orchestrationConcepts.length === 0) return;
+                const concept = orchestrationConcepts[index % orchestrationConcepts.length];
+
+                dynamicContentDiv.classList.remove('fade-in');
+                dynamicContentDiv.classList.add('fade-out');
+
+                setTimeout(() => {
+                    let keyConceptsHTML = '';
+                    if (concept.flow?.keyConcepts?.length > 0) {
+                        keyConceptsHTML = `<ul class="text-xs text-gray-400 list-disc list-inside mb-2 text-left max-w-md mx-auto">`;
+                        concept.flow.keyConcepts.slice(0, 3).forEach(kc => {
+                            keyConceptsHTML += `<li>${kc}</li>`;
+                        });
+                        keyConceptsHTML += `</ul>`;
+                    }
+
+                    dynamicContentDiv.innerHTML = `
+                        <div class="icon"><i class="${concept.icon}"></i></div>
+                        <h3>${concept.title}</h3>
+                        <p class="tagline">${concept.tagline}</p>
+                        <p class="description-preview">${concept.description.substring(0, 150)}...</p>
+                        ${keyConceptsHTML}
+                        <p class="no-code-emphasis">${concept.flow?.noCodeEmphasis || 'Visually configure on the canvas.'}</p> `;
+                    dynamicContentDiv.classList.remove('fade-out');
+                    dynamicContentDiv.classList.add('fade-in');
+                }, 500);
+            }
+
+            function cycleConcepts() {
+                currentConceptIndex++;
+                displayConcept(currentConceptIndex);
+            }
+
+            function startConceptCycle() {
+                if (conceptInterval) clearInterval(conceptInterval);
+                conceptInterval = setInterval(cycleConcepts, 7000);
+            }
+
+            if (dynamicContentDiv && orchestrationConcepts.length > 0) {
+                displayConcept(currentConceptIndex);
+                startConceptCycle();
+                if (conceptPlaceholder) {
+                    conceptPlaceholder.addEventListener('click', () => {
+                        cycleConcepts();
+                        startConceptCycle();
+                    });
+                }
+            }
+
+            // --- Fade-in Sections on Scroll ---
+            if ("IntersectionObserver" in window && sections.length > 0) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.1
+                };
+                const observerCallback = (entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                };
+                const intersectionObserver = new IntersectionObserver(observerCallback, observerOptions);
+                sections.forEach(section => {
+                    intersectionObserver.observe(section);
+                });
+            } else {
+                // Fallback for older browsers: just show all sections
+                sections.forEach(section => section.classList.add('is-visible'));
+            }
+
+        }); // End DOMContentLoaded
     </script>
 
 </body>
