@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth"> <head>
+<html lang="en" class="scroll-smooth">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,13 +14,16 @@
     <meta property="og:url" content="https://banyantreeai.org">
     <meta property="og:title" content="BanyanTree AI | No-Code Agentic AI Operating System">
     <meta property="og:description" content="BanyanTree AI: Stop Herding AI Cats. Start Orchestrating Masterpieces with our No-Code Agentic AI Operating System. Design, deploy, and manage intelligent AI agents.">
-    <meta property="og:image" content="https://banyantreeai.org/og-image.jpg"> <meta property="og:site_name" content="BanyanTree AI">
+    <meta property="og:image" content="https://banyantreeai.org/og-image.jpg">
+    <meta property="og:site_name" content="BanyanTree AI">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://banyantreeai.org">
     <meta name="twitter:title" content="BanyanTree AI | Autonomous Agents & LLM Tools">
     <meta name="twitter:description" content="BanyanTree AI: Stop Herding AI Cats. Start Orchestrating Masterpieces with our No-Code Agentic AI Operating System. Design, deploy, and manage intelligent AI agents.">
-    <meta name="twitter:image" content="https://banyantreeai.org/twitter-card-image.jpg"> <meta name="twitter:site" content="@YourTwitterHandle"> <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌳</text></svg>">
+    <meta name="twitter:image" content="https://banyantreeai.org/twitter-card-image.jpg">
+    <meta name="twitter:site" content="@YourTwitterHandle">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌳</text></svg>">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -38,7 +42,6 @@
             display: flex;
             flex-direction: column;
         }
-        /* Background Image Pseudo-element */
         body::before {
             content: "";
             position: fixed;
@@ -46,20 +49,18 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* Optimized SVG Background */
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3Cdefs%3E%3Cfilter id='blurFilter' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeGaussianBlur in='SourceGraphic' stdDeviation='3'/%3E%3C/filter%3E%3C/defs%3E%3Cg fill='%231a202c'%3E%3Cpath d='M480 950 V 600 Q 480 580 500 580 Q 520 580 520 600 V 950 Z'/%3E%3Cellipse cx='500' cy='450' rx='350' ry='200'/%3E%3Cellipse cx='500' cy='350' rx='300' ry='150'/%3E%3Cellipse cx='500' cy='280' rx='250' ry='120'/%3E%3Cpath d='M300 450 Q 320 600 330 750 L 340 750 Q 330 600 310 450 Z'/%3E%3Cpath d='M700 450 Q 680 600 670 750 L 660 750 Q 670 600 690 450 Z'/%3E%3Cpath d='M400 400 Q 410 550 420 700 L 430 700 Q 420 550 410 400 Z'/%3E%3Cpath d='M600 400 Q 590 550 580 700 L 570 700 Q 580 550 590 400 Z'/%3E%3C/g%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: center bottom;
             background-size: cover;
-            opacity: 0.1; /* Reduced opacity */
+            opacity: 0.1;
             z-index: -1;
-            filter: blur(3px); /* Slightly increased blur */
+            filter: blur(3px);
         }
 
-        /* Hero Section Background */
         .hero-bg {
             background: linear-gradient(135deg, #10B981 0%, #4F46E5 70%, #3730A3 100%);
-            color: #f0fdf4; /* Light text for contrast */
+            color: #f0fdf4;
         }
         .hero-svg-overlay {
             position: absolute;
@@ -69,33 +70,31 @@
             height: 100%;
             overflow: hidden;
             z-index: 0;
-            opacity: 0.1; /* Adjusted opacity */
+            opacity: 0.1;
         }
 
-        /* Color & Font Styles */
         .banyan-leaf-color { color: #34d399; }
         .section-title { font-weight: 800; color: #a5f3fc; }
 
-        /* Card Styles */
         .card-base {
             border-radius: 0.75rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
-            height: 100%; /* Ensure cards in a row have same height */
+            height: 100%;
         }
         .glassmorphism-card {
-            background-color: rgba(31, 41, 55, 0.5); /* Slightly more opaque */
-            backdrop-filter: blur(12px) saturate(150%); /* Adjusted blur/saturation */
+            background-color: rgba(31, 41, 55, 0.5);
+            backdrop-filter: blur(12px) saturate(150%);
             -webkit-backdrop-filter: blur(12px) saturate(150%);
-            border: 1px solid rgba(255, 255, 255, 0.1); /* Softer border */
-            box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.3); /* Adjusted shadow */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.3);
         }
         .card-base:hover {
-            transform: translateY(-5px) scale(1.015); /* Subtle hover effect */
+            transform: translateY(-5px) scale(1.015);
             box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.35);
         }
-        .card-content { flex-grow: 1; } /* Allows content to push footer down in card */
+        .card-content { flex-grow: 1; }
         .card-tagline {
             font-size: 0.8rem;
             font-style: italic;
@@ -110,7 +109,6 @@
             border-top-right-radius: 0.75rem;
         }
 
-        /* Button Styles */
         .cta-button {
             background-color: #10B981;
             color: white;
@@ -119,29 +117,26 @@
         }
         .cta-button:hover {
             background-color: #059669;
-            transform: translateY(-2px); /* Subtle lift */
+            transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(16, 185, 129, 0.4);
         }
 
-        /* Navigation Styles */
         nav {
-            background-color: rgba(17, 24, 39, 0.8); /* Slightly less transparent */
+            background-color: rgba(17, 24, 39, 0.8);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(55, 65, 81, 0.5); /* Subtle border */
+            border-bottom: 1px solid rgba(55, 65, 81, 0.5);
         }
         nav a, #mobile-menu-button {
             color: #e5e7eb;
-            transition: color 0.2s ease; /* Added transition */
+            transition: color 0.2s ease;
         }
         nav a:hover, #mobile-menu-button:hover {
-            color: #34d399; /* Hover color for links */
+            color: #34d399;
         }
-        /* Specific hover for SVG icon link */
         nav a.brand-link:hover svg {
-             color: #34d399; /* Change SVG color on hover */
+            color: #34d399;
         }
-        /* Improved Mobile Menu */
         #mobile-menu {
             background-color: rgba(31, 41, 55, 0.98);
             backdrop-filter: blur(10px);
@@ -155,47 +150,142 @@
             opacity: 1;
             pointer-events: auto;
         }
-        /* Focus Styles (Accessibility) */
-        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { /* Added textarea */
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
             outline: none;
-            box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.6); /* Custom focus ring */
+            box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.6);
             border-radius: 4px;
         }
-        input[type="email"]:focus-visible, textarea:focus-visible { /* Added textarea */
-             box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.6), 0 0 0 1px #10B981;
-             border-color: #10B981 !important; /* Ensure border color changes */
+        input[type="email"]:focus-visible, textarea:focus-visible {
+            box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.6), 0 0 0 1px #10B981;
+            border-color: #10B981 !important;
         }
 
-        /* Form Input Styling */
         .form-input {
             width: 100%;
             padding: 0.75rem 1rem;
-            border-radius: 0.375rem; /* rounded-md */
-            border: 1px solid #4b5563; /* border-gray-600 */
-            background-color: #374151; /* bg-gray-700 */
-            color: #e5e7eb; /* text-gray-200 */
+            border-radius: 0.375rem;
+            border: 1px solid #4b5563;
+            background-color: #374151;
+            color: #e5e7eb;
             outline: none;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
         }
-        .form-input::placeholder {
-            color: #9ca3af; /* placeholder-gray-500 */
-        }
-         .form-label {
+        .form-input::placeholder { color: #9ca3af; }
+        .form-label {
             display: block;
             margin-bottom: 0.5rem;
-            font-size: 0.875rem; /* text-sm */
-            font-weight: 500; /* font-medium */
-            color: #d1d5db; /* text-gray-300 */
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #d1d5db;
+        }
+
+        /* Video Carousel Styling (Hero) */
+        .video-carousel-container {
+            background-color: rgba(17, 24, 39, 0.5);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            border-radius: 0.75rem;
+            padding: 0.5rem;
+            box-shadow: 0 10px 30px rgba(16,185,129,0.15), inset 0 0 15px rgba(16,185,129,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .video-slide {
+            display: none;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        .video-slide.active {
+            display: block;
+        }
+        .video-slide .aspect-ratio-container { /* New class for the div holding video and overlay */
+            position: relative; /* For absolute positioning of the overlay */
+            border-radius: 0.5rem; /* Ensures overlay clipping matches video rounding */
+            overflow: hidden; /* Clips the overlay to the container's bounds */
+        }
+        .video-slide video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: 0.5rem; /* Rounded corners for the video player itself */
+        }
+
+        .video-poster-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3); /* Slight dark tint for better text contrast */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            color: white;
+            text-align: center;
+             padding: 0 1rem 1.5rem 1rem;
+            border-radius: 0.5rem; /* Match video rounding */
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+            pointer-events: none; /* Allows clicks to pass through to video controls */
+        }
+        .video-poster-overlay.hidden-overlay {
+            opacity: 0;
+        }
+        .video-poster-overlay .play-icon {
+            font-size: 3rem; /* text-5xl */
+            margin-bottom: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+        .video-poster-overlay .overlay-text {
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 600; /* font-semibold */
+            text-shadow: 0 1px 3px rgba(0,0,0,0.7);
         }
 
 
-        /* Animation Placeholder (Hero Section) */
+        .carousel-navigation {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 0.5rem;
+            pointer-events: none;
+        }
+        .carousel-navigation button {
+            background-color: rgba(16, 185, 129, 0.6);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: auto;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        .carousel-navigation button:hover {
+            background-color: rgba(5, 150, 105, 0.8);
+        }
+        .carousel-navigation button:focus-visible {
+             box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.6), 0 0 0 1px #10B981;
+        }
+        #prevVideoBtn { margin-left: 0.25rem; }
+        #nextVideoBtn { margin-right: 0.25rem; }
+
         .animation-placeholder {
             background-color: rgba(17, 24, 39, 0.5);
             border: 1px solid rgba(52, 211, 153, 0.3);
             border-radius: 0.75rem;
             padding: 2rem;
-            min-height: 350px;
+            min-height: 300px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -219,7 +309,6 @@
         }
         .animation-placeholder h3 {
             font-size: 1.5rem;
-            lg:font-size: 1.75rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
             color: #e5e7eb;
@@ -250,7 +339,6 @@
         .dev-hub-card-icon { color: #34d399; }
         .main-content-wrapper { flex-grow: 1; }
 
-        /* Fade-in Animation for Sections */
         .fade-in-section {
             opacity: 0;
             transform: translateY(20px);
@@ -261,9 +349,8 @@
             transform: translateY(0);
         }
 
-        /* Add scroll padding to the html element to offset the fixed nav */
         html {
-             scroll-padding-top: 70px; /* Adjust based on nav height */
+            scroll-padding-top: 70px;
         }
     </style>
 
@@ -300,7 +387,7 @@
     <nav class="fixed w-full z-30 top-0">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#" class="nav-link brand-link text-2xl font-bold hover:opacity-80 focus-visible:opacity-80 inline-flex items-center">
-                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" fill="currentColor" class="w-8 h-8 mr-2 text-green-400 transition-colors duration-200"> <path d="M 5 140 C 30 150, 170 150, 195 140 L 195 148 L 5 148 Z" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" fill="currentColor" class="w-8 h-8 mr-2 text-green-400 transition-colors duration-200"> <path d="M 5 140 C 30 150, 170 150, 195 140 L 195 148 L 5 148 Z" />
                     <path d="M 88 140 C 90 115, 95 85, 100 75 C 105 85, 110 115, 112 140 Z" />
                     <path d="M 20 80 C 15 65, 30 45, 50 40 Q 70 35, 100 38 Q 130 35, 150 40 C 170 45, 185 65, 180 80 L 175 82 L 170 80 L 165 83 L 160 80 L 155 84 L 150 81 L 145 85 L 140 82 L 135 86 L 130 83 L 125 87 L 120 84 L 115 88 L 110 85 L 105 89 L 100 85 L 95 89 L 90 85 L 85 88 L 80 84 L 75 87 L 70 83 L 65 86 L 60 82 L 55 85 L 50 81 L 45 84 L 40 80 L 35 83 L 30 80 L 25 82 Z"/>
                     <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
@@ -329,7 +416,8 @@
                 <a href="#developers" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Developers</a>
                 <a href="#blog" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Blog</a>
                 <a href="#why-us" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Why Us?</a>
-                <a href="#contact" class="nav-link cta-button text-white px-4 py-2 rounded-md text-sm font-medium">Unlock Agentic Power</a> </div>
+                <a href="#contact" class="nav-link cta-button text-white px-4 py-2 rounded-md text-sm font-medium">Unlock Agentic Power</a>
+            </div>
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="focus:outline-none p-2 rounded-md" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
                     <i class="fas fa-bars text-xl"></i>
@@ -344,13 +432,14 @@
             <a href="#developers" class="nav-link block hover:bg-gray-700 px-4 py-2 text-sm rounded-md mx-2">Developers</a>
             <a href="#blog" class="nav-link block hover:bg-gray-700 px-4 py-2 text-sm rounded-md mx-2">Blog</a>
             <a href="#why-us" class="nav-link block hover:bg-gray-700 px-4 py-2 text-sm rounded-md mx-2">Why Us?</a>
-            <a href="#contact" class="nav-link block cta-button text-white px-4 py-3 text-sm font-medium text-center mx-2 my-2 rounded-md">Unlock Agentic Power</a> </div>
+            <a href="#contact" class="nav-link block cta-button text-white px-4 py-3 text-sm font-medium text-center mx-2 my-2 rounded-md">Unlock Agentic Power</a>
+        </div>
     </nav>
 
     <header class="hero-bg pt-32 pb-24 relative z-20 fade-in-section">
         <div class="hero-svg-overlay">
-             <svg width="100%" height="100%" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-                 <path d="M-200 300 Q-100 200 0 300 T200 300 T400 300 T600 300 T800 300 T1000 300 T1200 300 T1400 300 T1600 300 T1800 300" stroke="rgba(255,255,255,0.08)" stroke-width="120" fill="none" stroke-linecap="round"/>
+            <svg width="100%" height="100%" viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <path d="M-200 300 Q-100 200 0 300 T200 300 T400 300 T600 300 T800 300 T1000 300 T1200 300 T1400 300 T1600 300 T1800 300" stroke="rgba(255,255,255,0.08)" stroke-width="120" fill="none" stroke-linecap="round"/>
                 <path d="M-200 400 Q-50 300 100 400 T350 400 T600 400 T850 400 T1100 400 T1350 400 T1600 400 T1850 400" stroke="rgba(255,255,255,0.05)" stroke-width="100" fill="none" stroke-linecap="round"/>
             </svg>
         </div>
@@ -361,14 +450,54 @@
             <p class="text-base sm:text-lg lg:text-xl mb-8 max-w-4xl mx-auto">
                 BanyanTree AI: Stop Herding AI Cats. Start Orchestrating Masterpieces. (Yes, No-Code!)
             </p>
-            <div id="orchestration-animation-placeholder" class="animation-placeholder max-w-3xl mx-auto mb-10">
-                <div id="dynamic-concept-content" class="concept-content">
-                    <div class="icon"><i class="fas fa-spinner fa-spin"></i></div>
-                    <h3 class="text-2xl font-semibold mb-3 text-green-300">Loading Orchestration Concepts...</h3>
+
+            <div id="demo-video-carousel" class="video-carousel-container max-w-5xl mx-auto mb-10">
+                <div class="video-slide active">
+                    <div class="w-full aspect-w-16 aspect-h-9 bg-gray-900 aspect-ratio-container">
+                         <video class="banyan-demo-video" controls poster="assets/videos/poster.png" preload="metadata">
+                            <source src="assets/videos/BanyanTree.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-poster-overlay">
+                            <i class="fas fa-play-circle play-icon"></i>
+                            <p class="overlay-text">Demo: Building Agents & Orchestration- No-Code</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-slide">
+                    <div class="w-full aspect-w-16 aspect-h-9 bg-gray-900 aspect-ratio-container">
+                         <video class="banyan-demo-video" controls poster="assets/videos/poster.png" preload="metadata">
+                            <source src="assets/videos/reactDemo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-poster-overlay">
+                            <i class="fas fa-play-circle play-icon"></i>
+                            <p class="overlay-text">Demo: Interact with ReAct Team of Agents</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-slide">
+                    <div class="w-full aspect-w-16 aspect-h-9 bg-gray-900 aspect-ratio-container">
+                         <video class="banyan-demo-video" controls poster="assets/videos/poster.png" preload="metadata">
+                            <source src="assets/videos/orderinv2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-poster-overlay">
+                            <i class="fas fa-play-circle play-icon"></i>
+                            <p class="overlay-text">Demo: Distributed API ReAct Agentic Flow </p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="carousel-navigation">
+                    <button id="prevVideoBtn" aria-label="Previous Video"><i class="fas fa-chevron-left"></i></button>
+                    <button id="nextVideoBtn" aria-label="Next Video"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
+            
+               
             <a href="#contact" class="cta-button font-bold py-4 px-10 rounded-lg text-lg shadow-xl">
-                Become the AI Overlord </a>
+                Become the AI Overlord
+            </a>
         </div>
     </header>
 
@@ -377,13 +506,19 @@
 
             <section id="vision" class="text-center fade-in-section">
                 <i class="fas fa-seedling fa-3x banyan-leaf-color mb-6"></i>
-                <h2 class="text-3xl lg:text-4xl font-bold section-title mb-6">Our Vision: The AI-Native Future (Minus the Leaf-Raking)</h2> <p class="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                    At BanyanTree AI, we're not just building another AI platform; we're cultivating an entire digital rainforest. Our vision? A future where intelligent SynaptiX Agents collaborate to solve actual problems (not just figure out if a hotdog is a sandwich). Our no-code platform is the super-seed, letting anyone grow vast agent ecosystems as sprawling and robust as a banyan tree – minus the actual leaf-raking. Get ready for some serious innovation. </p>
+                <h2 class="text-3xl lg:text-4xl font-bold section-title mb-6">Our Vision: The AI-Native Future (Minus the Leaf-Raking)</h2>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    At BanyanTree AI, we're not just building another AI platform; we're cultivating an entire digital rainforest. Our vision? A future where intelligent SynaptiX Agents collaborate to solve actual problems (not just figure out if a hotdog is a sandwich). Our no-code platform is the super-seed, letting anyone grow vast agent ecosystems as sprawling and robust as a banyan tree – minus the actual leaf-raking. Get ready for some serious innovation.
+                </p>
             </section>
 
-            <section id="features" class="fade-in-section text-center"> <i class="fas fa-cogs fa-3x banyan-leaf-color mb-6"></i> <h2 class="text-3xl lg:text-4xl font-bold section-title mb-6">
-                    SynaptiX Agents: Your AI Workforce (They Don't Even Need Coffee Breaks) </h2>
-                <p class="text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed"> At the heart of BanyanTree AI are <strong class="text-green-400">SynaptiX Agents</strong>—dynamic, tool-wielding specialists.
+            <section id="features" class="fade-in-section text-center">
+                <i class="fas fa-cogs fa-3x banyan-leaf-color mb-6"></i>
+                <h2 class="text-3xl lg:text-4xl font-bold section-title mb-6">
+                    SynaptiX Agents: Your AI Workforce (They Don't Even Need Coffee Breaks)
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+                    At the heart of BanyanTree AI are <strong class="text-green-400">SynaptiX Agents</strong>—dynamic, tool-wielding specialists.
                     Visually define their capabilities, equip them with powerful tools, and watch them execute complex tasks within our robust AI Operating System.
                     It's like having a team of tiny, digital geniuses who actually listen.
                 </p>
@@ -392,43 +527,63 @@
                         <div class="card-content">
                             <div class="text-5xl banyan-leaf-color mb-5"><i class="fas fa-magic"></i></div>
                             <h3 class="text-xl font-semibold mb-3 text-gray-100">Intuitive No-Code Builder</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed">Drag, drop, dominate. Build complex AI agents & orchestrations without making your devs cry (happy tears only).</p> </div>
+                            <p class="text-gray-400 text-sm leading-relaxed">Drag, drop, dominate. Build complex AI agents & orchestrations without making your devs cry (happy tears only).</p>
+                        </div>
                     </div>
                     <div class="card-base glassmorphism-card p-6 text-center">
-                         <div class="card-content">
+                        <div class="card-content">
                             <div class="text-5xl banyan-leaf-color mb-5"><i class="fas fa-brain"></i></div>
                             <h3 class="text-xl font-semibold mb-3 text-gray-100">Intelligent Core</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed">Our agents are smart. Like, 'passed the Turing test and then asked for a raise' smart. (Human-in-the-loop keeps them humble).</p> </div>
+                            <p class="text-gray-400 text-sm leading-relaxed">Our agents are smart. Like, 'passed the Turing test and then asked for a raise' smart. (Human-in-the-loop keeps them humble).</p>
+                        </div>
                     </div>
                     <div class="card-base glassmorphism-card p-6 text-center">
                         <div class="card-content">
                             <div class="text-5xl banyan-leaf-color mb-5"><i class="fas fa-toolbox"></i></div>
                             <h3 class="text-xl font-semibold mb-3 text-gray-100">Expansive Tool Arsenal</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed">More tools than a Swiss Army knife at a robotics convention. If it has an API, your agent can probably talk to it.</p> </div>
+                            <p class="text-gray-400 text-sm leading-relaxed">More tools than a Swiss Army knife at a robotics convention. If it has an API, your agent can probably talk to it.</p>
+                        </div>
                     </div>
                     <div class="card-base glassmorphism-card p-6 text-center">
                         <div class="card-content">
                             <div class="text-5xl banyan-leaf-color mb-5"><i class="fas fa-sitemap"></i></div>
                             <h3 class="text-xl font-semibold mb-3 text-gray-100">Registry & Discovery</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed">Agents auto-register for duty, ready to be discovered. Like Tinder, but for productive AI collaboration.</p> </div>
+                            <p class="text-gray-400 text-sm leading-relaxed">Agents auto-register for duty, ready to be discovered. Like Tinder, but for productive AI collaboration.</p>
+                        </div>
                     </div>
                     <div class="card-base glassmorphism-card p-6 text-center">
                         <div class="card-content">
                             <div class="text-5xl banyan-leaf-color mb-5"><i class="fas fa-link"></i></div>
                             <h3 class="text-xl font-semibold mb-3 text-gray-100">Standardized A2A Protocol</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed">Our agents speak the same language, avoiding the "lost in translation" drama of lesser AI systems.</p> </div>
+                            <p class="text-gray-400 text-sm leading-relaxed">Our agents speak the same language, avoiding the "lost in translation" drama of lesser AI systems.</p>
+                        </div>
                     </div>
                     <div class="card-base glassmorphism-card p-6 text-center">
                         <div class="card-content">
                             <div class="text-5xl banyan-leaf-color mb-5"><i class="fas fa-tachometer-alt"></i></div>
                             <h3 class="text-xl font-semibold mb-3 text-gray-100">Monitoring & Analytics</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed">Keep an eye on your AI workforce. See who's a star performer and who needs... "re-education."</p> </div>
+                            <p class="text-gray-400 text-sm leading-relaxed">Keep an eye on your AI workforce. See who's a star performer and who needs... "re-education."</p>
+                        </div>
                     </div>
                 </div>
             </section>
+
             <section id="orchestration" class="bg-gray-800 bg-opacity-50 py-16 rounded-lg backdrop-blur-md border border-gray-700 fade-in-section">
-                <div class="container mx-auto px-6 text-center"> <i class="fas fa-network-wired fa-3x banyan-leaf-color mb-6"></i> <h2 class="text-3xl lg:text-4xl font-bold section-title mb-12"> AI Orchestration: Making Your Agents Play Nice (Finally) </h2>
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left"> <div class="card-base glassmorphism-card p-6">
+                <div class="container mx-auto px-6 text-center">
+                    <i class="fas fa-network-wired fa-3x banyan-leaf-color mb-6"></i>
+                    <h2 class="text-3xl lg:text-4xl font-bold section-title mb-6"> AI Orchestration: Making Your Agents Play Nice (Finally)
+                    </h2>
+                    <p class="text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed"> Explore the diverse and powerful ways BanyanTree AI allows you to orchestrate SynaptiX Agents. From structured workflows to dynamic, emergent behaviors, build truly intelligent systems with our no-code visual tools.
+                    </p>
+
+                    <div id="relocated-orchestration-animator" class="animation-placeholder max-w-3xl mx-auto mb-16 p-6">
+                        <div id="dynamic-relocated-concept-content" class="concept-content">
+                            <div class="icon"><i class="fas fa-spinner fa-spin"></i></div>
+                            <h3 class="text-2xl font-semibold mb-3 text-green-300">Exploring Orchestration Paradigms...</h3>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                        <div class="card-base glassmorphism-card p-6">
                             <div class="card-content">
                                 <div class="text-4xl banyan-leaf-color mb-4"><i class="fas fa-project-diagram"></i></div>
                                 <h3 class="text-xl font-semibold mb-2 text-gray-100">Declarative AI Workflows</h3>
@@ -464,7 +619,7 @@
                             <div class="card-content">
                                 <div class="text-4xl banyan-leaf-color mb-4"><i class="fas fa-door-closed"></i></div>
                                 <h3 class="text-xl font-semibold mb-2 text-gray-100">Maxwell's Demon Orchestration</h3>
-                                 <p class="card-tagline">"Intelligent Information Valves"</p>
+                                <p class="card-tagline">"Intelligent Information Valves"</p>
                                 <p class="text-gray-400 text-sm leading-relaxed">Implement sophisticated information flow control where 'gatekeeper' agents selectively manage data or task routing based on complex criteria.</p>
                             </div>
                         </div>
@@ -483,7 +638,8 @@
             <section id="future" class="py-16 fade-in-section">
                 <div class="container mx-auto px-6 text-center">
                     <i class="fas fa-rocket fa-3x banyan-leaf-color mb-6"></i>
-                    <h2 class="text-3xl lg:text-4xl font-bold section-title mb-6">Ride the Next Wave of Agentic Frontier (It's Gnarly)</h2> <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-4 leading-relaxed">
+                    <h2 class="text-3xl lg:text-4xl font-bold section-title mb-6">Ride the Next Wave of Agentic Frontier (It's Gnarly)</h2>
+                    <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-4 leading-relaxed">
                         BanyanTree AI is more than a platform; it's the foundational <strong class="text-green-400">Operating System for Agentic AI</strong>. We empower you to build, manage, and scale the next generation of intelligent, autonomous systems.
                     </p>
                     <p class="text-md text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
@@ -511,21 +667,21 @@
                                 <p class="text-gray-400 text-sm leading-relaxed">Tools for defining and enforcing ethical guidelines. Because "sentient paperclip maximizer" is a bad look.</p>
                             </div>
                         </div>
-                         <div class="card-base glassmorphism-card p-6 text-center">
+                        <div class="card-base glassmorphism-card p-6 text-center">
                             <div class="card-content">
                                 <div class="text-5xl text-green-400 mb-5"><i class="fas fa-hands-helping"></i></div>
                                 <h3 class="text-xl font-semibold mb-3 text-gray-100">Advanced Human-AI Loop</h3>
                                 <p class="text-gray-400 text-sm leading-relaxed">Sophisticated interfaces for seamless human-agent collaboration. You're still the boss (mostly).</p>
                             </div>
                         </div>
-                         <div class="card-base glassmorphism-card p-6 text-center">
+                        <div class="card-base glassmorphism-card p-6 text-center">
                             <div class="card-content">
                                 <div class="text-5xl text-green-400 mb-5"><i class="fas fa-chart-line"></i></div>
                                 <h3 class="text-xl font-semibold mb-3 text-gray-100">Predictive AI Orchestration</h3>
                                 <p class="text-gray-400 text-sm leading-relaxed">AI agents that learn to anticipate future needs, proactively optimizing outcomes. It's like they're psychic.</p>
                             </div>
                         </div>
-                         <div class="card-base glassmorphism-card p-6 text-center">
+                        <div class="card-base glassmorphism-card p-6 text-center">
                             <div class="card-content">
                                 <div class="text-5xl text-green-400 mb-5"><i class="fas fa-brain"></i></div>
                                 <h3 class="text-xl font-semibold mb-3 text-gray-100">Cognitive Architectures</h3>
@@ -539,7 +695,8 @@
             <section id="developers" class="py-16 fade-in-section">
                 <div class="container mx-auto px-6 text-center">
                     <i class="fas fa-laptop-code fa-3x banyan-leaf-color mb-6"></i>
-                    <h2 class="text-3xl lg:text-4xl font-bold section-title mb-6">Developer Hub: For Those Who Speak Fluent {JSON}</h2> <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+                    <h2 class="text-3xl lg:text-4xl font-bold section-title mb-6">Developer Hub: For Those Who Speak Fluent {JSON}</h2>
+                    <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
                         BanyanTree AI is built for extensibility (and for devs who secretly love a good GUI). Access comprehensive resources to integrate, customize, and scale your AI agent solutions. Your PM might even understand this.
                     </p>
                     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -580,8 +737,11 @@
             </section>
 
             <section id="blog" class="bg-gray-800 bg-opacity-50 py-16 rounded-lg backdrop-blur-md border border-gray-700 fade-in-section">
-                <div class="container mx-auto px-6 text-center"> <i class="fas fa-feather-alt fa-3x banyan-leaf-color mb-6"></i> <h2 class="text-3xl lg:text-4xl font-bold section-title mb-12"> From Our Roots: AI Insights & Ideas (And Maybe a Rant or Two) </h2>
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left"> <div class="card-base glassmorphism-card overflow-hidden blog-card">
+                <div class="container mx-auto px-6 text-center">
+                    <i class="fas fa-feather-alt fa-3x banyan-leaf-color mb-6"></i>
+                    <h2 class="text-3xl lg:text-4xl font-bold section-title mb-12"> From Our Roots: AI Insights & Ideas (And Maybe a Rant or Two) </h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                        <div class="card-base glassmorphism-card overflow-hidden blog-card">
                             <img src="https://placehold.co/600x400/1f2937/34d399?text=No-Code+AI" alt="Abstract representation of interconnected agent nodes" class="w-full" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1f2937/cccccc?text=Image+Error';">
                             <div class="p-6 card-content">
                                 <h3 class="text-xl font-semibold mb-3 text-gray-100">No-Code AI: Because Your Devs Have Enough Jira Tickets</h3>
@@ -599,7 +759,7 @@
                                 <p class="text-gray-400 text-sm leading-relaxed mb-4">Dive into how event-driven patterns allow AI agents to react intelligently, leading to more dynamic systems.</p>
                                 <a href="#" class="font-medium text-green-400 hover:text-green-300">Read More &rarr;</a>
                             </div>
-                             <div class="px-6 pb-4 border-t border-gray-700 mt-auto">
+                            <div class="px-6 pb-4 border-t border-gray-700 mt-auto">
                                 <p class="text-xs text-gray-500">By Dr. Agent Smith - May 05, 2025</p>
                             </div>
                         </div>
@@ -610,7 +770,7 @@
                                 <p class="text-gray-400 text-sm leading-relaxed mb-4">Exploring self-improving systems, decentralized networks, and ethical governance in the evolving world of AI agents.</p>
                                 <a href="#" class="font-medium text-green-400 hover:text-green-300">Read More &rarr;</a>
                             </div>
-                             <div class="px-6 pb-4 border-t border-gray-700 mt-auto">
+                            <div class="px-6 pb-4 border-t border-gray-700 mt-auto">
                                 <p class="text-xs text-gray-500">By The Futurist - April 28, 2025</p>
                             </div>
                         </div>
@@ -626,14 +786,15 @@
             <section id="why-us" class="py-16 fade-in-section">
                 <div class="container mx-auto px-6 text-center">
                     <div class="inline-block mb-6 text-green-400">
-                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" fill="currentColor" class="w-14 h-14">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" fill="currentColor" class="w-14 h-14">
                             <path d="M 2 142 C 25 152, 175 152, 198 142 L 198 149 L 2 149 Z" />
                             <path d="M 85 142 C 88 110, 92 80, 100 70 C 108 80, 112 110, 115 142 Q 107 148, 100 148 Q 93 148, 85 142 Z" />
                             <path d="M 15 82 C 10 60, 25 38, 45 35 Q 65 30, 100 33 Q 135 30, 155 35 C 175 38, 190 60, 185 82 L 180 84 L 178 81 L 173 85 L 168 80 L 163 86 L 158 82 L 153 87 L 148 83 L 143 88 L 138 84 L 133 89 L 128 85 L 123 90 L 118 86 L 113 91 L 108 87 L 103 92 L 100 87 L 97 92 L 92 87 L 87 91 L 82 86 L 77 90 L 72 85 L 67 89 L 62 84 L 57 88 L 52 83 L 47 87 L 42 82 L 37 86 L 32 80 L 27 85 L 22 81 L 20 84 Z"/>
                             <g stroke="currentColor" stroke-linecap="round"> <line x1="40" y1="82" x2="42" y2="110" stroke-width="1"/> <line x1="50" y1="84" x2="51" y2="120" stroke-width="1.2"/> <line x1="60" y1="86" x2="61" y2="130" stroke-width="1.3"/> <line x1="70" y1="87" x2="70" y2="115" stroke-width="1.1"/> <line x1="80" y1="88" x2="80" y2="135" stroke-width="1.4"/> <line x1="90" y1="87" x2="90" y2="125" stroke-width="1.3"/> <line x1="100" y1="70" x2="100" y2="142" stroke-width="1.8"/> <line x1="110" y1="87" x2="110" y2="125" stroke-width="1.3"/> <line x1="120" y1="88" x2="120" y2="135" stroke-width="1.4"/> <line x1="130" y1="87" x2="130" y2="115" stroke-width="1.1"/> <line x1="140" y1="86" x2="139" y2="130" stroke-width="1.3"/> <line x1="150" y1="84" x2="149" y2="120" stroke-width="1.2"/> <line x1="160" y1="82" x2="158" y2="110" stroke-width="1"/> <line x1="65" y1="86" x2="66" y2="100" stroke-width="0.8"/> <line x1="75" y1="87" x2="75" y2="98" stroke-width="0.8"/> <line x1="125" y1="87" x2="125" y2="98" stroke-width="0.8"/> <line x1="135" y1="86" x2="134" y2="100" stroke-width="0.8"/> </g>
                         </svg>
                     </div>
-                    <h2 class="text-3xl lg:text-4xl font-bold section-title mb-6">Why BanyanTree AI? (Spoiler: It's Awesome)</h2> <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+                    <h2 class="text-3xl lg:text-4xl font-bold section-title mb-6">Why BanyanTree AI? (Spoiler: It's Awesome)</h2>
+                    <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
                         Tired of AI hype that fizzles? BanyanTree AI simplifies the chaos, empowering you to build the future of AI, today (for real this time):
                     </p>
                     <div class="grid md:grid-cols-3 gap-8 text-left">
@@ -654,7 +815,8 @@
             </section>
 
             <section id="contact" class="text-center py-20 bg-gray-800 bg-opacity-50 rounded-lg backdrop-blur-md border border-gray-700 fade-in-section">
-                <h2 class="text-3xl lg:text-4xl font-bold section-title mb-6">Ready to Grow Your AI Forest?</h2> <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+                <h2 class="text-3xl lg:text-4xl font-bold section-title mb-6">Ready to Grow Your AI Forest?</h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
                     Be among the first to experience the future of AI agent building. Join our "Seedling Program" for early access and bragging rights.
                 </p>
                 <form action="https://formspree.io/f/xgvknljr" method="POST" class="max-w-lg mx-auto space-y-6">
@@ -669,7 +831,7 @@
                     <button type="submit" class="cta-button font-bold py-3 px-8 rounded-lg text-lg shadow-md w-full sm:w-auto">
                         Plant My Seed!
                     </button>
-                     <p class="text-xs text-gray-500 mt-4">We respect your privacy. No spam, just pure, unadulterated AI goodness.</p>
+                    <p class="text-xs text-gray-500 mt-4">We respect your privacy. No spam, just pure, unadulterated AI goodness.</p>
                 </form>
             </section>
         </main>
@@ -679,7 +841,7 @@
         <div class="container mx-auto px-6 text-center">
             <div class="mb-4">
                 <a href="#" class="nav-link brand-link text-xl font-bold text-green-500 hover:text-green-400 inline-flex items-center">
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" fill="currentColor" class="w-8 h-8 mr-2 transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" fill="currentColor" class="w-8 h-8 mr-2 transition-colors duration-200">
                         <path d="M 2 142 C 25 152, 175 152, 198 142 L 198 149 L 2 149 Z" />
                         <path d="M 85 142 C 88 110, 92 80, 100 70 C 108 80, 112 110, 115 142 Q 107 148, 100 148 Q 93 148, 85 142 Z" />
                         <path d="M 15 82 C 10 60, 25 38, 45 35 Q 65 30, 100 33 Q 135 30, 155 35 C 175 38, 190 60, 185 82 L 180 84 L 178 81 L 173 85 L 168 80 L 163 86 L 158 82 L 153 87 L 148 83 L 143 88 L 138 84 L 133 89 L 128 85 L 123 90 L 118 86 L 113 91 L 108 87 L 103 92 L 100 87 L 97 92 L 92 87 L 87 91 L 82 86 L 77 90 L 72 85 L 67 89 L 62 84 L 57 88 L 52 83 L 47 87 L 42 82 L 37 86 L 32 80 L 27 85 L 22 81 L 20 84 Z"/>
@@ -692,11 +854,12 @@
                 <a href="#" class="hover:text-green-400">Privacy Policy</a>
                 <a href="#" class="hover:text-green-400">Terms of Service</a>
             </div>
-            <p class="text-xs">&copy; <span id="currentYear"></span> BanyanTree AI. All rights reserved. Cultivating the Future of Intelligent AI Orchestration... and occasionally, some killer memes.</p> </div>
+            <p class="text-xs">&copy; <span id="currentYear"></span> BanyanTree AI. All rights reserved. Cultivating the Future of Intelligent AI Orchestration... and occasionally, some killer memes.</p>
+        </div>
     </footer>
 
     <script>
-        // Orchestration Concepts Data... (remains the same)
+        // Orchestration Concepts Data (used by the relocated animator)
         const orchestrationConcepts = [
             { id: "quantumEntanglement", title: "Quantum-Inspired Entanglement", tagline: "Interlinked Agents, Cascading Intelligence.", description: "Model intricate, conditional dependencies where an agent's state 'collapse' triggers a cascade of observations and actions in 'entangled' agents, enabling highly adaptive and responsive systems.", flow: { type: "quantumEntanglement", trigger: "State change in an observed agent or critical external event.", keyConcepts: ["Observation", "State Collapse", "Visual Entanglement Mapping", "Cascading Effects"], noCodeEmphasis: "Visually define entanglement maps, agent states, and trigger conditions on the no-code canvas. No complex physics, just powerful conditional logic." }, icon: "fas fa-atom" },
             { id: "reactWithTeams", title: "ReAct Orchestration with AI Agent Teams", tagline: "Reason, Act, Achieve. Collaboratively.", description: "Empower a central LLM planner to reason about a goal, select appropriate AI agents from specialized teams, delegate tasks (actions), and iterate based on observations until the goal is achieved.", flow: { type: "reactLoop", trigger: "User-defined complex goal or query.", keyConcepts: ["Goal Decomposition", "LLM Planning", "Tool Selection", "Team Collaboration", "Iterative Refinement"], noCodeEmphasis: "Drag-and-drop to assemble agent teams. Configure the PlannerAgent's access to agents and tools visually. Define goals in natural language." }, icon: "fas fa-robot" },
@@ -707,14 +870,10 @@
         ];
 
         document.addEventListener('DOMContentLoaded', () => {
-
-            // --- Get DOM Elements ---
             const menuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileNavLinks = mobileMenu ? mobileMenu.querySelectorAll('.nav-link') : [];
             const currentYearElement = document.getElementById('currentYear');
-            const conceptPlaceholder = document.getElementById('orchestration-animation-placeholder');
-            const dynamicContentDiv = document.getElementById('dynamic-concept-content');
             const sections = document.querySelectorAll('.fade-in-section');
 
             // --- Mobile Menu Toggle ---
@@ -726,112 +885,167 @@
                     mobileMenu.classList.toggle('menu-open');
                     menuButton.classList.toggle('active', !isExpanded);
                 });
-
-                // Close menu when clicking outside
                 document.addEventListener('click', (event) => {
-                    const isClickInsideMenu = mobileMenu.contains(event.target);
-                    const isClickOnButton = menuButton.contains(event.target);
-                    const isMenuOpen = mobileMenu.classList.contains('menu-open');
+                    if (!mobileMenu.contains(event.target) && !menuButton.contains(event.target) && mobileMenu.classList.contains('menu-open')) {
+                        menuButton.click();
+                    }
+                });
+                mobileNavLinks.forEach(link => link.addEventListener('click', () => {
+                    if (mobileMenu.classList.contains('menu-open')) menuButton.click();
+                }));
+            }
 
-                    if (isMenuOpen && !isClickInsideMenu && !isClickOnButton) {
-                       menuButton.click(); // Simulate click to close
+            if (currentYearElement) currentYearElement.textContent = new Date().getFullYear();
+
+            // --- Video Carousel Logic (Hero Section) ---
+            const videoCarousel = document.getElementById('demo-video-carousel');
+            const videoSlides = videoCarousel ? videoCarousel.querySelectorAll('.video-slide') : [];
+            const allVideosInCarousel = videoCarousel ? videoCarousel.querySelectorAll('.banyan-demo-video') : [];
+            const nextVideoBtn = document.getElementById('nextVideoBtn');
+            const prevVideoBtn = document.getElementById('prevVideoBtn');
+            let currentVideoIndex = 0;
+
+            function showVideo(index) {
+                allVideosInCarousel.forEach((video, videoIdx) => {
+                    if (!video.paused) {
+                        video.pause();
+                    }
+                    // Ensure overlay is visible if video is not the one being shown or is paused
+                    const overlay = video.closest('.aspect-ratio-container').querySelector('.video-poster-overlay');
+                    if (overlay) {
+                         overlay.classList.remove('hidden-overlay');
                     }
                 });
 
-                // Close menu when a mobile nav link is clicked
-                mobileNavLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                         if (mobileMenu.classList.contains('menu-open')) {
-                            menuButton.click();
-                         }
-                    });
+                videoSlides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                    const videoElement = slide.querySelector('.banyan-demo-video');
+                    const overlayElement = slide.querySelector('.video-poster-overlay');
+                    if (videoElement && overlayElement) {
+                        if (i === index) { // Current active slide
+                            // If video is paused or ended, show overlay, otherwise hide it
+                            if (videoElement.paused || videoElement.ended) {
+                                overlayElement.classList.remove('hidden-overlay');
+                            } else {
+                                overlayElement.classList.add('hidden-overlay');
+                            }
+                        } else { // Inactive slides
+                            overlayElement.classList.remove('hidden-overlay'); // Ensure overlays are visible for inactive slides
+                        }
+                    }
                 });
             }
 
-            // --- Set Current Year ---
-            if (currentYearElement) {
-                 currentYearElement.textContent = new Date().getFullYear();
+            if (videoSlides.length > 0) {
+                showVideo(currentVideoIndex); // Show the first video and its overlay state correctly
+
+                if (nextVideoBtn) {
+                    nextVideoBtn.addEventListener('click', () => {
+                        currentVideoIndex = (currentVideoIndex + 1) % videoSlides.length;
+                        showVideo(currentVideoIndex);
+                    });
+                }
+
+                if (prevVideoBtn) {
+                    prevVideoBtn.addEventListener('click', () => {
+                        currentVideoIndex = (currentVideoIndex - 1 + videoSlides.length) % videoSlides.length;
+                        showVideo(currentVideoIndex);
+                    });
+                }
+
+                // Add event listeners to each video for play/pause/ended to toggle overlay
+                allVideosInCarousel.forEach(video => {
+                    const overlay = video.closest('.aspect-ratio-container').querySelector('.video-poster-overlay');
+                    if (overlay) {
+                        video.addEventListener('play', () => {
+                            overlay.classList.add('hidden-overlay');
+                        });
+                        video.addEventListener('pause', () => {
+                            // Only show overlay if the video's slide is currently active
+                            if (video.closest('.video-slide').classList.contains('active')) {
+                                overlay.classList.remove('hidden-overlay');
+                            }
+                        });
+                        video.addEventListener('ended', () => {
+                             if (video.closest('.video-slide').classList.contains('active')) {
+                                overlay.classList.remove('hidden-overlay');
+                            }
+                        });
+                    }
+                });
             }
 
-            // --- Dynamic Orchestration Concept Display ---
-            let currentConceptIndex = 0;
-            let conceptInterval;
 
-            function displayConcept(index) {
-                if (!orchestrationConcepts || !dynamicContentDiv || orchestrationConcepts.length === 0) return;
+            // --- Relocated Orchestration Concept Animator Logic ---
+            const relocatedAnimatorPlaceholder = document.getElementById('relocated-orchestration-animator');
+            const dynamicRelocatedContentDiv = document.getElementById('dynamic-relocated-concept-content');
+            let currentRelocatedConceptIndex = 0;
+            let relocatedConceptInterval;
+
+            function displayRelocatedConcept(index) {
+                if (!orchestrationConcepts || !dynamicRelocatedContentDiv || orchestrationConcepts.length === 0) {
+                    if(dynamicRelocatedContentDiv) dynamicRelocatedContentDiv.innerHTML = '<p>No concepts to display.</p>';
+                    return;
+                }
                 const concept = orchestrationConcepts[index % orchestrationConcepts.length];
-
-                dynamicContentDiv.classList.remove('fade-in');
-                dynamicContentDiv.classList.add('fade-out');
-
+                dynamicRelocatedContentDiv.classList.remove('fade-in');
+                dynamicRelocatedContentDiv.classList.add('fade-out');
                 setTimeout(() => {
                     let keyConceptsHTML = '';
                     if (concept.flow?.keyConcepts?.length > 0) {
                         keyConceptsHTML = `<ul class="text-xs text-gray-400 list-disc list-inside mb-2 text-left max-w-md mx-auto">`;
-                        concept.flow.keyConcepts.slice(0, 3).forEach(kc => {
-                            keyConceptsHTML += `<li>${kc}</li>`;
-                        });
+                        concept.flow.keyConcepts.slice(0, 3).forEach(kc => { keyConceptsHTML += `<li>${kc}</li>`; });
                         keyConceptsHTML += `</ul>`;
                     }
-
-                    dynamicContentDiv.innerHTML = `
-                        <div class="icon"><i class="${concept.icon}"></i></div>
+                    dynamicRelocatedContentDiv.innerHTML = `
+                        <div class="icon"><i class="${concept.icon || 'fas fa-cogs'}"></i></div>
                         <h3>${concept.title}</h3>
                         <p class="tagline">${concept.tagline}</p>
-                        <p class="description-preview">${concept.description.substring(0, 150)}...</p>
-                        ${keyConceptsHTML}
-                        <p class="no-code-emphasis">${concept.flow?.noCodeEmphasis || 'Visually configure on the canvas.'}</p> `;
-                    dynamicContentDiv.classList.remove('fade-out');
-                    dynamicContentDiv.classList.add('fade-in');
+                        <p class="description-preview">${concept.description.substring(0, 120)}...</p> ${keyConceptsHTML}
+                        <p class="no-code-emphasis">${concept.flow?.noCodeEmphasis || 'Visually configure on the canvas.'}</p>`;
+                    dynamicRelocatedContentDiv.classList.remove('fade-out');
+                    dynamicRelocatedContentDiv.classList.add('fade-in');
                 }, 500);
             }
 
-            function cycleConcepts() {
-                currentConceptIndex++;
-                displayConcept(currentConceptIndex);
+            function cycleRelocatedConcepts() {
+                currentRelocatedConceptIndex++;
+                displayRelocatedConcept(currentRelocatedConceptIndex);
             }
 
-            function startConceptCycle() {
-                if (conceptInterval) clearInterval(conceptInterval);
-                conceptInterval = setInterval(cycleConcepts, 7000);
+            function startRelocatedConceptCycle() {
+                if (relocatedConceptInterval) clearInterval(relocatedConceptInterval);
+                relocatedConceptInterval = setInterval(cycleRelocatedConcepts, 8000);
             }
 
-            if (dynamicContentDiv && orchestrationConcepts.length > 0) {
-                displayConcept(currentConceptIndex);
-                startConceptCycle();
-                if (conceptPlaceholder) {
-                    conceptPlaceholder.addEventListener('click', () => {
-                        cycleConcepts();
-                        startConceptCycle();
+            if (dynamicRelocatedContentDiv && orchestrationConcepts && orchestrationConcepts.length > 0) {
+                displayRelocatedConcept(currentRelocatedConceptIndex);
+                startRelocatedConceptCycle();
+                if (relocatedAnimatorPlaceholder) {
+                    relocatedAnimatorPlaceholder.addEventListener('click', () => {
+                        cycleRelocatedConcepts();
+                        startRelocatedConceptCycle();
                     });
                 }
+            } else if (dynamicRelocatedContentDiv) {
+                 dynamicRelocatedContentDiv.innerHTML = '<p class="text-gray-400">Orchestration concepts loading or unavailable.</p>';
             }
 
             // --- Fade-in Sections on Scroll ---
             if ("IntersectionObserver" in window && sections.length > 0) {
-                const observerOptions = {
-                    root: null,
-                    rootMargin: '0px',
-                    threshold: 0.1
-                };
-                const observerCallback = (entries, observer) => {
+                const observer = new IntersectionObserver((entries, obs) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             entry.target.classList.add('is-visible');
-                            observer.unobserve(entry.target);
+                            obs.unobserve(entry.target);
                         }
                     });
-                };
-                const intersectionObserver = new IntersectionObserver(observerCallback, observerOptions);
-                sections.forEach(section => {
-                    intersectionObserver.observe(section);
-                });
+                }, { root: null, rootMargin: '0px', threshold: 0.1 });
+                sections.forEach(section => observer.observe(section));
             } else {
-                // Fallback for older browsers: just show all sections
                 sections.forEach(section => section.classList.add('is-visible'));
             }
-
-        }); // End DOMContentLoaded
+        });
     </script>
 
 </body>
